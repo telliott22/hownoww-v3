@@ -1,10 +1,11 @@
 import type { NextPage } from 'next'
 import Layout from './layout'
 import Footer from './footer'
+import { NavItem } from '../sanity/types'
 
-const Page: NextPage = ({children, title}) => {
+const Page: NextPage<{title: string}> = ({children, title}) => {
 
-  const navigation = [
+  const navigation: NavItem[] = [
     { name: 'Pricing', href: '/' },
     { name: 'Coupon Dates', href: '/coupon-dates' },
     { name: 'Coupon Schedules', href: '/coupon-schedules' },

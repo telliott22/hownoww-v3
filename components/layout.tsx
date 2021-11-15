@@ -3,22 +3,23 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import Logo from './logo'
+import FooterTicker from './footer-ticker'
+import {FunctionComponent} from 'react'
+import { NavItem } from '../sanity/types'
+import { useRouter } from 'next/router'
+import Container from './container'
 
-function classNames(...classes) {
+
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Layout({children, title, navigation}) {
+const Layout: FunctionComponent<{title:string,navigation: NavItem[]}> = ({children, title, navigation}) => {
+
+  const loacation = useRouter();
+
   return (
     <>
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full">
-        <body class="h-full">
-        ```
-      */}
       <div className="min-h-full">
         <Disclosure as="nav" className="bg-white border-b border-gray-200">
           {({ open }) => (
@@ -37,12 +38,12 @@ export default function Layout({children, title, navigation}) {
                           key={item.name}
                           href={item.href}
                           className={classNames(
-                            item.current
-                              ? 'border-indigo-500 text-gray-900'
+                            loacation.pathname === item.href
+                              ? 'border-blue-default text-gray-900'
                               : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700',
                             'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
                           )}
-                          aria-current={item.current ? 'page' : undefined}
+                          aria-current={loacation.pathname === item.href ? 'page' : undefined}
                         >
                           {item.name}
                         </a>
@@ -71,12 +72,13 @@ export default function Layout({children, title, navigation}) {
                       as="a"
                       href={item.href}
                       className={classNames(
-                        item.current
-                          ? 'bg-indigo-50 border-indigo-500 text-indigo-700'
+                        loacation.pathname === item.href
+
+                          ? 'bg-indigo-50 border-blue-default text-blue-default'
                           : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800',
                         'block pl-3 pr-4 py-2 border-l-4 text-base font-medium'
                       )}
-                      aria-current={item.current ? 'page' : undefined}
+                      aria-current={loacation.pathname === item.href  ? 'page' : undefined}
                     >
                       {item.name}
                     </Disclosure.Button>
@@ -101,12 +103,14 @@ export default function Layout({children, title, navigation}) {
           }
           
           <main>
-            <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-             { children }
-            </div>
+            { children }
           </main>
         </div>
+
+          <FooterTicker />
       </div>
     </>
   )
 }
+
+export default Layout

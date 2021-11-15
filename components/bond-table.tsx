@@ -1,18 +1,12 @@
 
 import { FunctionComponent } from 'react'; 
+import { Bond } from '../sanity/types'
 
-/* This example requires Tailwind CSS v2.0+ */
-const people = [
-    { name: 'Jane Cooper', title: 'Regional Paradigm Technician', role: 'Admin', email: 'jane.cooper@example.com' },
-    { name: 'Cody Fisher', title: 'Product Directives Officer', role: 'Owner', email: 'cody.fisher@example.com' },
-    // More people...
-  ]
-  
-  const BondTable: FunctionComponent = ({title}) => {
+  const BondTable: FunctionComponent<{title: string, bonds: Bond[]}> = ({title, bonds}) => {
     return (
-        <>
+        <div>
             <div className="pb-5 border-gray-200">
-                <h3 className="text-2xl leading-6 font-medium  text-gray-900">{title}</h3>
+                <h3 className="text-2xl leading-6 text-blue-600">{title}</h3>
             </div>
             <div className="flex flex-col">
                 <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -21,6 +15,12 @@ const people = [
                     <table className="min-w-full divide-y divide-gray-200">
                         <thead className="bg-gray-50">
                         <tr>
+                            <th
+                            scope="col"
+                            className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                            >
+                            Name
+                            </th>
                             <th
                             scope="col"
                             className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
@@ -74,32 +74,48 @@ const people = [
                             </th>
                         </tr>
                         </thead>
-                        <tbody>
-                        {people.map((person, personIdx) => (
-                            <tr key={person.email} className={personIdx % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{person.name}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{person.title}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{person.email}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{person.role}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{person.role}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{person.role}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{person.role}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{person.role}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <a href="#" className="text-indigo-600 hover:text-indigo-900">
-                                Edit
-                                </a>
-                            </td>
-                            </tr>
-                        ))}
-                        </tbody>
+                        {
+
+                            bonds && bonds.length ?
+                            
+                            <tbody >
+                                {bonds.map((bond, index) => (
+                                    <tr key={bond.title} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{bond.title}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{bond.issuer}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{bond.maturity}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{bond.coupon}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{bond.bidPrice}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{bond.askPrice}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{bond.bidPercentage}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{bond.askPercentage}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{bond.amountOutstanding}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                        <a href="#" className="text-blue-600 hover:text-blue-900">
+                                        Edit
+                                        </a>
+                                    </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+
+                            :
+
+                            <tbody >
+                                <tr >
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 text-center" colSpan={8}>No bonds found</td>
+                                </tr>
+                            </tbody>
+                            
+                        }
+
                     </table>
                     </div>
                 </div>
                 </div>
             </div>
 
-      </>
+      </div>
     )
   }
   

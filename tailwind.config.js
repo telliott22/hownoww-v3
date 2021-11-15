@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   mode: 'jit',
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
@@ -7,14 +9,16 @@ module.exports = {
       colors: {
         'earth': '#D06A47',
         'orange': '#F06636',
-        'blue': {
-         default: '#75B8CE',
-         light: '#75B8CE',
-         bright: '#22C4FA'
-        },
+        blue: colors.cyan,
+        // 'blue': {
+        //   default: '#47a8be',
+        //   light: '#75B8CE',
+        //   bright: '#22C4FA'
+        // },
         yellow: '#DAB45B',
         purple: '#8B5894',
         black: '#1B1B1B',
+        red: '#EA3C53',
         grey: {
           lighter: '#F1F1F1',
           light: '#C1C1C1',
@@ -77,10 +81,20 @@ module.exports = {
             transform: 'translateY(0) translateX(-50%)'
           }
         },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        marquee2: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0%)' },
+        },
       },
       animation:{
         'fade-in-up': 'fade-in-up 0.25s ease-out',
         'fade-in-up-delay': 'fade-in-up-delay 0.2s linear 0.2s both',
+        marquee: 'marquee 20s linear infinite',
+        marquee2: 'marquee2 20s linear infinite',
       }
     },
   },
