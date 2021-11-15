@@ -14,7 +14,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-const Layout: FunctionComponent<{title:string,navigation: NavItem[]}> = ({children, title, navigation}) => {
+const Layout: FunctionComponent<{title?:string,navigation: NavItem[]}> = ({children, title, navigation}) => {
 
   const loacation = useRouter();
 
