@@ -1,13 +1,14 @@
 export type Bond = {
     title: string,
     issuer: string,
-    maturity: string,
+    maturityDate: string,
     coupon: string,
     bidPrice: string,
     askPrice: string,
     bidPercentage: string,
     askPercentage: string,
-    amountOutstanding: string
+    amountOutstanding: string,
+    couponDate?: string
   }
 
 

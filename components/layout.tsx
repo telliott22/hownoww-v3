@@ -29,7 +29,7 @@ const Layout: FunctionComponent<{title?:string,navigation: NavItem[]}> = ({child
                   <div className="flex">
                     <div className="flex-shrink-0 flex items-center mr-12">
 
-                      <Logo />
+                      <Logo/>
                       
                     </div>
                     <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
@@ -94,7 +94,7 @@ const Layout: FunctionComponent<{title?:string,navigation: NavItem[]}> = ({child
           {
 
             title &&
-            <header className="mb-4">
+            <header className="mt-8">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h1 className="text-3xl font-bold leading-tight text-gray-900">{title}</h1>
               </div>

@@ -7,7 +7,7 @@ const Page: NextPage<{title?: string}> = ({children, title}) => {
 
   const navigation: NavItem[] = [
     { name: 'Pricing', href: '/' },
-    { name: 'Coupon Dates', href: '/coupon-dates' },
+    { name: 'Coupon Dates', href: '/coupon-payments' },
     { name: 'Coupon Schedules', href: '/coupon-schedules' },
     { name: 'Coupon Calculator', href: '/cash-calculator' },
     { name: 'Guide', href: '/guide' },
