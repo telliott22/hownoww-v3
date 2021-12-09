@@ -29,7 +29,7 @@ const Layout: FunctionComponent<{title?:string,navigation: NavItem[]}> = ({child
                   <div className="flex">
                     <div className="flex-shrink-0 flex items-center mr-12">
 
-                      <Logo/>
+                      <Logo />
                       
                     </div>
                     <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
@@ -39,8 +39,8 @@ const Layout: FunctionComponent<{title?:string,navigation: NavItem[]}> = ({child
                           href={item.href}
                           className={classNames(
                             loacation.pathname === item.href
-                              ? 'border-blue-default text-gray-900'
-                              : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700',
+                              ? 'border-blue-600 text-blue-600'
+                              : 'border-transparent text-gray-500 hover:border-opacity-30 hover:border-blue-600 hover:text-blue-600',
                             'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
                           )}
                           aria-current={loacation.pathname === item.href ? 'page' : undefined}

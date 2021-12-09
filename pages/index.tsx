@@ -24,7 +24,6 @@ const Home: NextPage<{bonds:Bond[]}> = ({bonds}) => {
 
       <HomepageHero />
 
-
       <Container>
 
         <div className="space-y-20">

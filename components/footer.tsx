@@ -1,5 +1,6 @@
 import { FunctionComponent } from "react"
 import { NavItem } from "../sanity/types"
+import Logo from "./logo"
 
 
    const Footer: FunctionComponent<{navigation: NavItem[]}> = ({navigation}) => {
@@ -18,6 +19,9 @@ import { NavItem } from "../sanity/types"
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div>
                   <ul role="list" className="mt-4 space-y-4">
+                    <li className="mb-8">
+                      <Logo color={'white'} />
+                    </li>
                     {navigation.map((item) => (
                       <li key={item.name}>
                         <a href={item.href} className="text-base text-gray-300 hover:text-white">
