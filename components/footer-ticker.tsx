@@ -1,6 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { SpeakerphoneIcon, XIcon } from '@heroicons/react/outline'
 import { FunctionComponent } from 'react'
+import Container from './container'
 
 const FooterTicker: FunctionComponent = () => {
   return (
@@ -11,7 +12,7 @@ const FooterTicker: FunctionComponent = () => {
       */}
       <div className="fixed inset-x-0 bottom-0">
         <div className="bg-blue-600">
-          <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
+          <Container>
             <div className="flex items-center justify-between flex-wrap">
               <div className="w-0 flex-1 flex items-center">
                 <span className="flex p-2 rounded-lg bg-blue-800">
@@ -40,7 +41,7 @@ const FooterTicker: FunctionComponent = () => {
                 </button>
               </div>
             </div>
-          </div>
+          </Container>
         </div>
       </div>
     </>

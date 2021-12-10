@@ -3,7 +3,7 @@ import { FunctionComponent } from "react";
 const Container: FunctionComponent = ({children}) => {
 
     return (
-        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div className="max-w-screen-2xl mx-auto sm:px-6 lg:px-8">
             { children }
         </div>
     )

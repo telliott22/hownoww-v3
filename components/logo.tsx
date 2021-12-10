@@ -20,7 +20,7 @@ const Logo: FunctionComponent<LogoProps> = ({color}) => {
                 <div className="block lg:hidden h-12 w-12 p-1">
                     <Image src={color === 'white' ? LogoWhiteSvg : LogoMobileSvg} alt="HowNoww"/>
                 </div>
-                <div className="hidden lg:block h-12 w-[200px] relative cursor-pointer">
+                <div className="hidden lg:block h-28 w-[260px] relative cursor-pointer">
                     <Image src={color === 'white' ? LogoWhiteSvg : LogoSvg} alt="HowNoww" layout="fill"/>
                 </div>
             </>

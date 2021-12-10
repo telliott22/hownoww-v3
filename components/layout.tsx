@@ -14,7 +14,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-const Layout: FunctionComponent<{title?:string,navigation: NavItem[]}> = ({children, title, navigation}) => {
+const Layout: FunctionComponent<{title?:string, description?: string, navigation: NavItem[]}> = ({children, title, description, navigation}) => {
 
   const loacation = useRouter();
 
@@ -24,8 +24,8 @@ const Layout: FunctionComponent<{title?:string,navigation: NavItem[]}> = ({child
         <Disclosure as="nav" className="bg-white border-b border-gray-200">
           {({ open }) => (
             <>
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between h-16">
+              <Container>
+                <div className="flex justify-between h-24">
                   <div className="flex">
                     <div className="flex-shrink-0 flex items-center mr-12">
 
@@ -62,7 +62,7 @@ const Layout: FunctionComponent<{title?:string,navigation: NavItem[]}> = ({child
                     </Disclosure.Button>
                   </div>
                 </div>
-              </div>
+              </Container>
 
               <Disclosure.Panel className="sm:hidden">
                 <div className="pt-2 pb-3 space-y-1">
@@ -95,9 +95,18 @@ const Layout: FunctionComponent<{title?:string,navigation: NavItem[]}> = ({child
 
             title &&
             <header className="mt-8">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h1 className="text-3xl font-bold leading-tight text-gray-900">{title}</h1>
-              </div>
+
+              <Container>
+                <div className="md:w-3/4">
+                  <h1 className="text-3xl font-bold leading-tight text-gray-900">{title}</h1>
+
+                  {
+                    description &&
+                    <p className="mt-4 text-lg leading-relaxed text-gray-600">{description}</p>
+                  }
+                </div>
+              </Container>
+              
             </header>
           
           }

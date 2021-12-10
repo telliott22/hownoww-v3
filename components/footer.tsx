@@ -1,19 +1,19 @@
 import { FunctionComponent } from "react"
 import { NavItem } from "../sanity/types"
+import Container from "./container"
 import Logo from "./logo"
 
 
    const Footer: FunctionComponent<{navigation: NavItem[]}> = ({navigation}) => {
 
-
     const year = new Date().getFullYear()
 
     return (
-      <footer className="bg-gray-800 bg-blue" aria-labelledby="footer-heading">
+      <footer className="bg-gray-800 bg-blue py-12 mt-20" aria-labelledby="footer-heading">
         <h2 id="footer-heading" className="sr-only">
           Footer
         </h2>
-        <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+        <Container>
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
             <div className="grid grid-cols-2 gap-8 xl:col-span-2">
               <div className="md:grid md:grid-cols-2 md:gap-8">
@@ -66,10 +66,10 @@ import Logo from "./logo"
           </div>
           <div className="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
             <p className="mt-8 text-base text-gray-400 md:mt-0 md:order-1">
-              &copy; {year} Workflow, Inc. All rights reserved.
+              &copy; {year} HowNoww. All rights reserved.
             </p>
           </div>
-        </div>
+        </Container>
       </footer>
     )
   }
