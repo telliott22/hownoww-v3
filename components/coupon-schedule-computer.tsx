@@ -183,52 +183,49 @@ const CouponScheduleComputer: FunctionComponent = () => {
                 </div>
                 <div className="mt-5 md:mt-0 md:col-span-2">
 
-                    {
-                        couponSchedule &&  selectedBond &&
-                        <div className="space-y-6">
-                            <table className="w-full">
-                                <thead>
-                                    <tr>
-                                    <th
-                                        scope="col"
-                                        className="px-6 pb-2 text-left text-sm font-bold text-blue-500 uppercase tracking-wider w-1/4"
-                                    >
-                                        Coupon Rate
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        className="px-6 pb-2 text-left text-sm font-bold text-blue-500 uppercase tracking-wider w-1/4"
-                                    >
-                                        Coupon Frequency
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        className="px-6 pb-2 text-left text-sm font-bold text-blue-500 uppercase tracking-wider w-1/4"
-                                    >
-                                        Maturity
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        className="px-6 pb-2 text-left text-sm font-bold text-blue-500 uppercase tracking-wider w-1/4"
-                                    >
-                                        Coupons Remaining
-                                    </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td className="px-6 pb-4 whitespace-nowrap text-md font-medium text-gray-900">{selectedBond.coupon}%</td>
-                                        <td className="px-6 pb-4 whitespace-nowrap text-md text-gray-500">Semi-annually</td>
-                                        <td className="px-6 pb-4 whitespace-nowrap text-md text-gray-500">{formatDate(selectedBond.maturityDate)}</td>
-                                        <td className="px-6 pb-4 whitespace-nowrap text-md text-gray-500">{couponSchedule.length}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    <div className="space-y-6">
+                        <table className="w-full">
+                            <thead>
+                                <tr>
+                                <th
+                                    scope="col"
+                                    className="px-6 pb-2 text-left text-sm font-bold text-blue-500 uppercase tracking-wider w-1/4"
+                                >
+                                    Coupon Rate
+                                </th>
+                                <th
+                                    scope="col"
+                                    className="px-6 pb-2 text-left text-sm font-bold text-blue-500 uppercase tracking-wider w-1/4"
+                                >
+                                    Coupon Frequency
+                                </th>
+                                <th
+                                    scope="col"
+                                    className="px-6 pb-2 text-left text-sm font-bold text-blue-500 uppercase tracking-wider w-1/4"
+                                >
+                                    Maturity
+                                </th>
+                                <th
+                                    scope="col"
+                                    className="px-6 pb-2 text-left text-sm font-bold text-blue-500 uppercase tracking-wider w-1/4"
+                                >
+                                    Coupons Remaining
+                                </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td className="px-6 pb-4 whitespace-nowrap text-md font-medium text-gray-900">{ selectedBond ? selectedBond.coupon +'%' : ''}</td>
+                                    <td className="px-6 pb-4 whitespace-nowrap text-md text-gray-500">{ selectedBond ? 'Semi-annually' : ''}</td>
+                                    <td className="px-6 pb-4 whitespace-nowrap text-md text-gray-500">{ selectedBond ? formatDate(selectedBond.maturityDate) : ''}</td>
+                                    <td className="px-6 pb-4 whitespace-nowrap text-md text-gray-500">{ couponSchedule && couponSchedule.length > 0 ? couponSchedule.length : ''}</td>
+                                </tr>
+                            </tbody>
+                        </table>
 
-                            <CopuponScheduleTable coupons={couponSchedule} />
+                        <CopuponScheduleTable coupons={couponSchedule ? couponSchedule : []} />
 
-                        </div>
-                    }
+                    </div>
                    
                 </div>
             </div>
