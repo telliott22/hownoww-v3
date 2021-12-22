@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Container from '../components/container'
-import CouponScheduleComputer from '../components/coupon-schedule-computer'
+import CouponScheduleComponent from '../components/coupon-schedule-component'
 import Page from '../components/page'
 
 const CouponSchedules: NextPage = () => {
@@ -10,7 +10,7 @@ const CouponSchedules: NextPage = () => {
 
       <Container>
 
-        <CouponScheduleComputer />
+        <CouponScheduleComponent />
 
       </Container>
 

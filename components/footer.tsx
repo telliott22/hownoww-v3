@@ -20,7 +20,7 @@ import Logo from "./logo"
                 <div>
                   <ul role="list" className="mt-4 space-y-4">
                     <li className="mb-8">
-                      <Logo color={'white'} />
+                      <Logo color={'white'} desktopOnly={true} />
                     </li>
                     {navigation.map((item) => (
                       <li key={item.name}>

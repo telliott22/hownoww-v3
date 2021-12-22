@@ -30,3 +30,10 @@ export type NavItem = {
   name: string,
   href: string
 }
+
+export type CashCalculatorResponse = {
+  principalAmount: number
+  accruedInterest: number
+  total: number
+  accrualDays: number
+}

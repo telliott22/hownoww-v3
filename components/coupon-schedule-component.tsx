@@ -157,19 +157,16 @@ const CouponScheduleComputer: FunctionComponent = () => {
                                 </label>
                                 <div className="mt-1">
                                     <input
-                                    type="number"
-                                    name="amount"
-                                    id="amount"
-                                    value={amount}
-                                    onChange={(e) => setAmount(parseInt(e.target.value))}
-                                    className="border-opacity-50 border focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md p-3"
-                                    placeholder="1000"
+                                        type="number"
+                                        name="amount"
+                                        id="amount"
+                                        value={amount}
+                                        onChange={(e) => setAmount(parseInt(e.target.value))}
+                                        className="border-opacity-50 border focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md p-3"
+                                        placeholder="1000"
                                     />
                                 </div>
                             </div>
-                       
-
-
                     </div>
 
                     <button

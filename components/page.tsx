@@ -4,7 +4,6 @@ import Footer from './footer'
 import { NavItem } from '../sanity/types'
 
 const Page: NextPage<{title?: string, description?: string}> = ({children, title, description}) => {
-
   const navigation: NavItem[] = [
     { name: 'Pricing', href: '/' },
     { name: 'Coupon Dates', href: '/coupon-payments' },
@@ -14,12 +13,12 @@ const Page: NextPage<{title?: string, description?: string}> = ({children, title
   ]
 
   return (
-    <>
+    <main className="mt-10">
         <Layout title={title} description={description} navigation={navigation}>
             {children}
         </Layout>
         <Footer navigation={navigation} />
-    </>
+    </main>
   )
 }
 

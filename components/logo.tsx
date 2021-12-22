@@ -7,20 +7,22 @@ import Link from 'next/Link'
 
 interface LogoProps {
     color: 'blue' | 'white'
+    desktopOnly: boolean
 }
 
 const defaultProps: LogoProps = {
-    color: 'blue'
+    color: 'blue',
+    desktopOnly: false
 }
 
-const Logo: FunctionComponent<LogoProps> = ({color}) => {
+const Logo: FunctionComponent<LogoProps> = ({color,desktopOnly}) => {
     return(
         <Link href="/"  >
             <>
-                <div className="block lg:hidden h-12 w-12 p-1">
+                <div className={ 'h-12 w-12 p-1' + (desktopOnly ? ' hidden ' : ' block lg:hidden ') } >
                     <Image src={color === 'white' ? LogoWhiteSvg : LogoMobileSvg} alt="HowNoww"/>
                 </div>
-                <div className="hidden lg:block h-28 w-[260px] relative cursor-pointer">
+                <div className={'h-28 w-[260px] relative cursor-pointer ' + (desktopOnly ? 'block h-20 w-[220px] lg:h-28 lg:w-[260px] ' : 'hidden lg:block')}>
                     <Image src={color === 'white' ? LogoWhiteSvg : LogoSvg} alt="HowNoww" layout="fill"/>
                 </div>
             </>
