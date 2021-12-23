@@ -1,25 +1,80 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect, useState } from 'react';
+import { getNotification } from '../sanity/queries';
 
 const ticker: FunctionComponent = () => {
-    return (
-        <div className="relative flex overflow-x-hidden text-red text-lg uppercase border-b border-gray-200 space-x-4">
-            <div className="py-2 animate-marquee whitespace-nowrap space-x-4">
-                <span className="">Marquee Item 1</span>
-                <span className="">Marquee Item 2</span>
-                <span className="">Marquee Item 3</span>
-                <span className="">Marquee Item 4</span>
-                <span className="">Marquee Item 5</span>
-            </div>
+  const [notificationText, setNotificationText] = useState('');
 
-            <div className="absolute top-0 py-2 animate-marquee2 whitespace-nowrap space-x-4">
-                <span className="">Marquee Item 1</span>
-                <span className="">Marquee Item 2</span>
-                <span className="">Marquee Item 3</span>
-                <span className="">Marquee Item 4</span>
-                <span className="">Marquee Item 5</span>
-            </div>
-        </div>
-    )
-}
+  const fetchNotificatitonText = async () => {
+    const result = await getNotification();
+
+    console.log('result', result);
+
+    setNotificationText(result.text);
+  };
+
+  useEffect(() => {
+    fetchNotificatitonText();
+  }, []);
+
+  return (
+    <div className="absolute top-0 flex overflow-x-hidden text-white text-sm uppercase border-b border-gray-200 space-x-8 w-full bg-gray-800">
+      <div className="py-[2px] animate-marquee whitespace-nowrap space-x-8">
+
+        <span>
+          {notificationText}
+        </span>
+
+        <span>
+          -
+        </span>
+
+        <span>
+          {notificationText}
+        </span>
+
+        <span>
+          -
+        </span>
+
+        <span>
+          {notificationText}
+        </span>
+
+        <span>
+          -
+        </span>
+
+      </div>
+
+      <div className="absolute top-0 py-[2px] animate-marquee2 whitespace-nowrap space-x-8">
+
+        <span>
+          {notificationText}
+        </span>
+
+        <span>
+          -
+        </span>
+
+        <span>
+          {notificationText}
+        </span>
+
+        <span>
+          -
+        </span>
+
+        <span>
+          {notificationText}
+        </span>
+
+        <span>
+          -
+        </span>
+
+      </div>
+    </div>
+  );
+};
 
 export default ticker;

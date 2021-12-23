@@ -14,7 +14,7 @@ const Page: NextPage<{ title?: string, description?: string }> = function ({ chi
   ];
 
   return (
-    <main className="mt-10">
+    <main className="mt-6">
       <Layout title={title} description={description} navigation={navigation}>
         {children}
       </Layout>

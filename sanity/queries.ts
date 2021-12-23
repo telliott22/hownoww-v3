@@ -3,6 +3,7 @@ import sanityClient from './client';
 type SanityQuery = string;
 type SanityQueryWithProps = Function;
 
+const getNotificationQuery: SanityQuery = '*[_type == "notification"][0]{...}';
 const getAllBondsQuery: SanityQuery = '*[_type == "bond"]{...,"slug": slug.current}';
 const getAllBondsTitlesQuery: SanityQuery = '*[_type == "bond"]{title, _id, issuerType, "slug": slug.current}';
 
@@ -37,7 +38,8 @@ const getAllGuidePages = async () => {
 const getAllGuidePagesSlugs = async () => sanityClient().fetch(getAllGuidePagesQuery);
 
 const getGuidePage = async (slug: string) => sanityClient().fetch(getGuidePageQuery(slug));
+const getNotification = () => sanityClient().fetch(getNotificationQuery);
 
 export {
-  getAllBonds, getAllBondsTitles, getAllGuidePages, getGuidePage, getAllGuidePagesSlugs,
+  getAllBonds, getAllBondsTitles, getAllGuidePages, getGuidePage, getAllGuidePagesSlugs, getNotification,
 };

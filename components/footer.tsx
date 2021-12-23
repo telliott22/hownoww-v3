@@ -16,7 +16,7 @@ const Footer: FunctionComponent<{ navigation: NavItem[] }> = function ({ navigat
           <div className="grid grid-cols-2 gap-8 xl:col-span-2">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <ul className="mt-4 space-y-4 flex flex-row justift-">
+                <ul className="mt-4 space-y-4 ">
                   <li className="mb-8">
                     <Logo color="white" desktopOnly />
                   </li>
