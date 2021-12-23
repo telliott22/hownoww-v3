@@ -9,7 +9,7 @@ import NigerianFlag from '../public/flags/nigeria.png';
 import AngolanFlag from '../public/flags/angola.png';
 import GhanaianFlag from '../public/flags/ghana.png';
 
-const BondTable: FunctionComponent<{ title: string, bonds: Bond[], prices: Price[], type: 'coupon' | 'bond' }> = function ({
+const BondTable: FunctionComponent<{ title: string, bonds: Bond[], prices: Price[], type: 'coupon' | 'bond' | 'history' }> = function ({
   title, bonds, prices, type,
 }) {
   const changeChevron = (change: string) => {
@@ -102,6 +102,22 @@ const BondTable: FunctionComponent<{ title: string, bonds: Bond[], prices: Price
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{bond.maturityDate}</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{bond.coupon}</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{bond.coupon}</td>
+            </tr>
+          ))}
+        </tbody>
+      );
+    }
+
+    if (type === 'history') {
+      return (
+        <tbody>
+          {prices.map((price, index) => (
+            <tr key={price.formattedDate} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{price.formattedDate}</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm  text-gray-500">{price.bid_price}</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{price.ask_price}</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{`${price.bid_percentage}%`}</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{`${price.ask_percentage}%`}</td>
             </tr>
           ))}
         </tbody>
@@ -232,12 +248,53 @@ const BondTable: FunctionComponent<{ title: string, bonds: Bond[], prices: Price
                             </tr>
                             )
 
-                        }
+                    }
+
+                  {
+
+                            type === 'history'
+                            && (
+                            <tr>
+                              <th
+                                scope="col"
+                                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/5"
+                              >
+                                Date
+                              </th>
+                              <th
+                                scope="col"
+                                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/5"
+                              >
+                                Bid Price
+                              </th>
+                              <th
+                                scope="col"
+                                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/5"
+                              >
+                                Ask Price
+                              </th>
+                              <th
+                                scope="col"
+                                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/5"
+                              >
+                                Bid %
+                              </th>
+                              <th
+                                scope="col"
+                                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/5"
+                              >
+                                Ask %
+                              </th>
+
+                            </tr>
+                            )
+
+                    }
 
                 </thead>
                 {
 
-                    bonds && bonds.length
+                    (bonds && bonds.length) || (prices && prices.length)
 
                       ? renderBondRows()
 

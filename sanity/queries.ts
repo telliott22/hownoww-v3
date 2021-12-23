@@ -35,6 +35,7 @@ const getAllGuidePages = async () => {
 
   return [];
 };
+
 const getAllGuidePagesSlugs = async () => sanityClient().fetch(getAllGuidePagesQuery);
 
 const getGuidePage = async (slug: string) => sanityClient().fetch(getGuidePageQuery(slug));
