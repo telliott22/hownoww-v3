@@ -12,6 +12,8 @@ export type Bond = {
   issuerType: string,
   slug: string,
   couponDate?: string
+  country: string
+  expired: boolean
 };
 
 export type BondGroup = {
@@ -46,4 +48,21 @@ export type GuidePageData = {
 export type GuidePageNavItem = {
   title: string,
   slug: string,
+};
+
+export type Price = {
+  id: number,
+  title: string,
+  bid_price: string,
+  ask_price: string,
+  bid_percentage: string,
+  ask_percentage: string,
+  change: string,
+  created_at: string,
+  updated_at: string,
+  eod: boolean,
+  yield: string,
+  slug: string,
+  formattedDate: string,
+  day: string
 };
