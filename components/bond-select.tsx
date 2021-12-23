@@ -1,15 +1,12 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment, FunctionComponent, useState } from 'react'
-import { Listbox, Transition } from '@headlessui/react'
-import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
-import { Bond } from '../sanity/types'
+import { Fragment, FunctionComponent, useState } from 'react';
+import { Listbox, Transition } from '@headlessui/react';
+import { CheckIcon, SelectorIcon } from '@heroicons/react/solid';
+import { Bond } from '../sanity/types';
+import { classNames } from '../lib/utils';
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
-}
-
-const BondSelect: FunctionComponent<{bonds: Bond[]}> = ({bonds}) => {
-  const [selected, setSelected] = useState({title: ''})
+const BondSelect: FunctionComponent<{ bonds: Bond[] }> = function ({ bonds }) {
+  const [selected, setSelected] = useState({ title: '' });
 
   return (
     <Listbox value={selected} onChange={setSelected}>
@@ -35,12 +32,10 @@ const BondSelect: FunctionComponent<{bonds: Bond[]}> = ({bonds}) => {
                 {bonds.map((person) => (
                   <Listbox.Option
                     key={person._id}
-                    className={({ active }) =>
-                      classNames(
-                        active ? 'text-white bg-blue-600' : 'text-gray-900',
-                        'cursor-default select-none relative py-2 pl-3 pr-9'
-                      )
-                    }
+                    className={({ active }) => classNames(
+                      active ? 'text-white bg-blue-600' : 'text-gray-900',
+                      'cursor-default select-none relative py-2 pl-3 pr-9',
+                    )}
                     value={person}
                   >
                     {({ selected, active }) => (
@@ -53,7 +48,7 @@ const BondSelect: FunctionComponent<{bonds: Bond[]}> = ({bonds}) => {
                           <span
                             className={classNames(
                               active ? 'text-white' : 'text-blue-600',
-                              'absolute inset-y-0 right-0 flex items-center pr-4'
+                              'absolute inset-y-0 right-0 flex items-center pr-4',
                             )}
                           >
                             <CheckIcon className="h-5 w-5" aria-hidden="true" />
@@ -69,7 +64,7 @@ const BondSelect: FunctionComponent<{bonds: Bond[]}> = ({bonds}) => {
         </>
       )}
     </Listbox>
-  )
-}
+  );
+};
 
 export default BondSelect;
