@@ -11,9 +11,10 @@ export type Bond = {
   amountOutstanding: string,
   issuerType: string,
   slug: string,
-  couponDate?: string
-  country: string
-  expired: boolean
+  couponDate?: string,
+  prospectus?: string,
+  country: string,
+  expired: boolean,
 };
 
 export type BondGroup = {

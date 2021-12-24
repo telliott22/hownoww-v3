@@ -74,15 +74,23 @@ const BondTable: FunctionComponent<{ title: string, bonds: Bond[], prices: Price
                   }
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{bond.amountOutstanding}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                <td className="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
                   <Link href={`/history/${bond.slug}`} passHref>
-                    <span className="w-5 h-5 block cursor-pointer text-blue"><ClockIcon /></span>
+                    <span className="w-5 h-5 inline-block cursor-pointer text-blue"><ClockIcon /></span>
                   </Link>
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                  <Link href={`/history/${bond.slug}`} passHref>
-                    <span className="w-5 h-5 block cursor-pointer text-blue"><DocumentDownloadIcon /></span>
-                  </Link>
+                <td className="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+
+                  {
+                      bond.prospectus
+                        && (
+                        <a href={bond.prospectus} download target="_blank" rel="noreferrer">
+                          <span className="w-5 h-5 inline-block cursor-pointer text-blue text"><DocumentDownloadIcon /></span>
+                        </a>
+                        )
+
+                  }
+
                 </td>
               </tr>
 
@@ -194,13 +202,13 @@ const BondTable: FunctionComponent<{ title: string, bonds: Bond[], prices: Price
                               </th>
                               <th
                                 scope="col"
-                                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/12"
+                                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/12 text-center"
                               >
                                 History
                               </th>
                               <th
                                 scope="col"
-                                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/12"
+                                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/12 text-center"
                               >
                                 Prospectus
                               </th>
