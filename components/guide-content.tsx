@@ -160,10 +160,13 @@ const GuideContent: FunctionComponent<{ pageData: GuidePageData, pageSlugs: Guid
                 && (
                 <div className="mr-auto">
 
-                  <a className="flex underline text-blue-700" href={pageSlugs[currentPageIndex - 1].slug}>
-                    <ChevronLeftIcon className="flex-shrink-0 h-6 w-6 text-gray-400 relative bottom-[px]" aria-hidden="true" />
-                    {`Previous page: ${pageSlugs[currentPageIndex - 1].title}`}
-                  </a>
+                  <Link href={`/guide/${pageSlugs[currentPageIndex - 1].slug}`} passHref>
+                    <a className="flex underline text-blue-700">
+                      <ChevronLeftIcon className="flex-shrink-0 h-6 w-6 text-gray-400 relative bottom-[px]" aria-hidden="true" />
+                      {`Previous page: ${pageSlugs[currentPageIndex - 1].title}`}
+                    </a>
+
+                  </Link>
 
                 </div>
                 )
