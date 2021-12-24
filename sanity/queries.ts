@@ -6,6 +6,7 @@ type SanityQueryWithProps = Function;
 const getNotificationQuery: SanityQuery = '*[_type == "notification"][0]{...}';
 const getAllBondsQuery: SanityQuery = '*[_type == "bond"]{...,"slug": slug.current}';
 const getAllBondsTitlesQuery: SanityQuery = '*[_type == "bond"]{title, _id, issuerType, "slug": slug.current}';
+const getAllFaqSectionsQuery: SanityQuery = '*[_type == "faqSection"]{...}';
 
 const getAllGuidePagesQuery: SanityQuery = '*[_type == "guidePage"] | order(order desc){ "slug": slug.current, title } ';
 
@@ -15,6 +16,7 @@ const getGuidePageQuery: SanityQueryWithProps = (slug: string) => `{
 
 const getAllBonds = async () => sanityClient().fetch(getAllBondsQuery);
 const getAllBondsTitles = async () => sanityClient().fetch(getAllBondsTitlesQuery);
+const getAllFaqSections = async () => sanityClient().fetch(getAllFaqSectionsQuery);
 const getAllGuidePages = async () => {
   const result = await sanityClient().fetch(getAllGuidePagesQuery);
 
@@ -42,5 +44,5 @@ const getGuidePage = async (slug: string) => sanityClient().fetch(getGuidePageQu
 const getNotification = () => sanityClient().fetch(getNotificationQuery);
 
 export {
-  getAllBonds, getAllBondsTitles, getAllGuidePages, getGuidePage, getAllGuidePagesSlugs, getNotification,
+  getAllBonds, getAllBondsTitles, getAllGuidePages, getGuidePage, getAllGuidePagesSlugs, getNotification, getAllFaqSections,
 };

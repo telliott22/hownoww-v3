@@ -1,14 +1,11 @@
 import { FunctionComponent, useEffect, useState } from 'react';
-import PortableText from 'react-portable-text';
 import { useRouter } from 'next/router';
 import { ChevronRightIcon, ChevronLeftIcon, DotsHorizontalIcon } from '@heroicons/react/solid';
 import { GuidePageData, GuidePageNavItem } from '../sanity/types';
 import GuideSlideOver from './guide-slide-over';
 import GuideBreadcrumbs from './guide-breardcrumbs';
 import ContactCta from './contact-cta';
-
-const serializers = {
-};
+import RichText from './rich-text';
 
 const GuideContent: FunctionComponent<{ pageData: GuidePageData, pageSlugs: GuidePageNavItem[] }> = function ({ pageData, pageSlugs }) {
   const router = useRouter();
@@ -120,7 +117,7 @@ const GuideContent: FunctionComponent<{ pageData: GuidePageData, pageSlugs: Guid
 
                 pageData
 
-                  ? <PortableText className="space-y-8" content={pageData.content} serializers={serializers} />
+                  ? <RichText content={pageData.content} />
 
                   : (
                     <>

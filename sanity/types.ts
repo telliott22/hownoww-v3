@@ -50,6 +50,16 @@ export type GuidePageNavItem = {
   slug: string,
 };
 
+export type FaqSection = {
+  title: string,
+  faqs: Faq[],
+};
+
+export type Faq = {
+  question: string,
+  answer: [Object],
+};
+
 export type Price = {
   id: number,
   title: string,
