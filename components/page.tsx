@@ -6,7 +6,7 @@ import ContactCta from './contact-cta';
 
 const Page: NextPage<{ title?: string, description?: string }> = function ({ children, title, description }) {
   const navigation: NavItem[] = [
-    { name: 'Pricing', href: '/' },
+    { name: 'Pricing', href: '/pricing' },
     { name: 'Coupon Dates', href: '/coupon-payments' },
     { name: 'Coupon Schedules', href: '/coupon-schedules' },
     { name: 'Coupon Calculator', href: '/cash-calculator' },

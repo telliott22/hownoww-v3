@@ -6,7 +6,7 @@ const ContactCta: FunctionComponent = function () {
   return (
     <div className="text-center">
       <Container>
-        <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+        <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">
           <span className="block">Still have questions?</span>
           <span className="block">Learn more about Eurobonds in our guide.</span>
         </h2>

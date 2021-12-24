@@ -32,7 +32,7 @@ const GuideSlideOver: FunctionComponent<{ pageSlugs: GuidePageNavItem[], open: b
                       <div className="ml-3 h-7 flex items-center">
                         <button
                           type="button"
-                          className="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                          className="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                           onClick={() => setOpen(false)}
                         >
                           <span className="sr-only">Close panel</span>

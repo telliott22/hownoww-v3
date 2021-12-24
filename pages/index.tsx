@@ -1,12 +1,14 @@
 import type { NextPage } from 'next';
 import { useEffect, useState } from 'react';
 import Page from '../components/page';
-import HomepageHero from '../components/homepage-hero';
-import BondTable from '../components/bond-table';
+import HomepageHero from '../components/homepage-hero-v2';
 import { getAllBonds, getAllFaqSections } from '../sanity/queries';
 import { Bond, FaqSection, Price } from '../sanity/types';
 import Container from '../components/container';
 import FaqSections from '../components/faqs/faq-section';
+import Features from '../components/features';
+import Features2 from '../components/features-2';
+import Flags from './flags';
 
 export async function getStaticProps() {
   const bonds = await getAllBonds();
@@ -48,25 +50,15 @@ const Home: NextPage<{ bonds: Bond[], faqSections: FaqSection[] }> = function ({
 
       <Container>
 
-        <div className="space-y-20">
+        <div className="space-y-20 pb-20">
 
-          <BondTable type="bond" title="Nigerian Government Eurobonds" prices={prices || []} bonds={bonds.filter((bond) => bond.issuerType === 'government' && bond.country === 'nigeria' && bond.expired !== true)} />
+          <Features />
 
-          <BondTable type="bond" title="Ghanaian Government Eurobonds" prices={prices || []} bonds={bonds.filter((bond) => bond.issuerType === 'government' && bond.country === 'ghana' && bond.expired !== true)} />
-
-          <BondTable type="bond" title="Angolan Government Eurobonds" prices={prices || []} bonds={bonds.filter((bond) => bond.issuerType === 'government' && bond.country === 'angola' && bond.expired !== true)} />
-
-          <BondTable type="bond" title="Nigerian Bank Eurobonds" prices={prices || []} bonds={bonds.filter((bond) => bond.issuerType === 'bank' && bond.country === 'nigeria' && bond.expired !== true)} />
-
-          <BondTable type="bond" title="Expired Eurobonds" prices={prices || []} bonds={bonds.filter((bond) => bond.expired === true)} />
-
-          <small className="text-xs text-grey-dark block">All prices and yields are purely indicative and should not be interpreted as live. Although we verify data accuracy, HowNoww expressly disclaims the accuracy, adequacy, or completeness of any data and shall not be liable for any errors, omissions or other defects in, delays or interruptions in such data, or for any actions taken in reliance thereon. HowNoww will not be liable for any damages relating to your use of the information provided herein. All data and information is provided “as is” for personal informational purposes only, and is not intended for trading purposes or advice. Please consult your broker or financial representative to verify pricing before executing any trade. HowNoww has exclusive proprietary rights in the data and information provided.</small>
-
-        </div>
-
-        <div>
+          <Features2 />
 
           <FaqSections faqSections={faqSections} />
+
+          <Flags />
 
         </div>
 

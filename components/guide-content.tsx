@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { GuidePageData, GuidePageNavItem } from '../sanity/types';
 import GuideSlideOver from './guide-slide-over';
 import GuideBreadcrumbs from './guide-breardcrumbs';
-import ContactCta from './contact-cta';
 import RichText from './rich-text';
 
 const GuideContent: FunctionComponent<{ pageData: GuidePageData, pageSlugs: GuidePageNavItem[] }> = function ({ pageData, pageSlugs }) {
@@ -112,7 +111,7 @@ const GuideContent: FunctionComponent<{ pageData: GuidePageData, pageSlugs: Guid
             </span>
           </h1>
         </div>
-        <div className="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">
+        <div className="mt-6 prose prose-blue prose-lg text-gray-500 mx-auto">
 
           {
 

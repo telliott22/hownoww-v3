@@ -17,15 +17,15 @@ const defaultProps: LogoProps = {
 
 const Logo: FunctionComponent<LogoProps> = function ({ color, desktopOnly }) {
   return (
-    <Link href="/">
-      <>
+    <Link href="/" passHref>
+      <a>
         <div className={`h-12 w-12 p-1${desktopOnly ? ' hidden ' : ' block lg:hidden '}`}>
           <Image src={color === 'white' ? LogoWhiteSvg : LogoMobileSvg} alt="HowNoww" />
         </div>
         <div className={`h-28 w-[260px] relative cursor-pointer ${desktopOnly ? 'block h-20 w-[220px] lg:h-28 lg:w-[260px] ' : 'hidden lg:block'}`}>
           <Image src={color === 'white' ? LogoWhiteSvg : LogoSvg} alt="HowNoww" layout="fill" />
         </div>
-      </>
+      </a>
     </Link>
   );
 };
