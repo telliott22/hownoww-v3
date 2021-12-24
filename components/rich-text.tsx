@@ -1,12 +1,14 @@
 import { FunctionComponent } from 'react';
-import PortableText from 'react-portable-text';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
-const serializers = {
-};
-
-const RichText: FunctionComponent<{ content: [Object], className?: string }> = function ({ content, className }) {
+const RichText: FunctionComponent<{ content: string, className?: string }> = function ({ content, className }) {
   if (content) {
-    return <PortableText className={`${className} space-y-8`} content={content} serializers={serializers} />;
+    return (
+      <ReactMarkdown className={`${className} space-y-8`} remarkPlugins={[remarkGfm]}>
+        {content}
+      </ReactMarkdown>
+    );
   }
   return null;
 };

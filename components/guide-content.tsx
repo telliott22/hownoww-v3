@@ -1,6 +1,7 @@
 import { FunctionComponent, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { ChevronRightIcon, ChevronLeftIcon, DotsHorizontalIcon } from '@heroicons/react/solid';
+import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/solid';
+import Link from 'next/link';
 import { GuidePageData, GuidePageNavItem } from '../sanity/types';
 import GuideSlideOver from './guide-slide-over';
 import GuideBreadcrumbs from './guide-breardcrumbs';
@@ -174,11 +175,14 @@ const GuideContent: FunctionComponent<{ pageData: GuidePageData, pageSlugs: Guid
                 && (
                 <div className="ml-auto">
 
-                  <a className="flex underline text-blue-700" href={pageSlugs[currentPageIndex + 1].slug}>
+                  <Link href={`/guide/${pageSlugs[currentPageIndex + 1].slug}`} passHref>
 
-                    {`Next page: ${pageSlugs[currentPageIndex + 1].title}`}
-                    <ChevronRightIcon className="flex-shrink-0 h-6 w-6 text-gray-600 relative bottom-[2px]" aria-hidden="true" />
-                  </a>
+                    <a className="flex underline text-blue-700">
+                      {`Next page: ${pageSlugs[currentPageIndex + 1].title}`}
+                      <ChevronRightIcon className="flex-shrink-0 h-6 w-6 text-gray-600 relative bottom-[2px]" aria-hidden="true" />
+                    </a>
+
+                  </Link>
 
                 </div>
                 )

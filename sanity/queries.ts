@@ -8,7 +8,7 @@ const getAllBondsQuery: SanityQuery = '*[_type == "bond"]{...,"slug": slug.curre
 const getAllBondsTitlesQuery: SanityQuery = '*[_type == "bond"]{title, _id, issuerType, "slug": slug.current}';
 const getAllFaqSectionsQuery: SanityQuery = '*[_type == "faqSection"]{...}';
 
-const getAllGuidePagesQuery: SanityQuery = '*[_type == "guidePage"] | order(order desc){ "slug": slug.current, title } ';
+const getAllGuidePagesQuery: SanityQuery = '*[_type == "guidePage"] | order(order asc){ "slug": slug.current, title, order } ';
 
 const getGuidePageQuery: SanityQueryWithProps = (slug: string) => `{
     "page":  *[_type == "guidePage" && slug.current == "${slug}"][0]

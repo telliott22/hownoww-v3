@@ -42,7 +42,7 @@ export type CashCalculatorResponse = {
 };
 
 export type GuidePageData = {
-  content: [object]
+  content: string
   title: string
 };
 
@@ -58,7 +58,7 @@ export type FaqSection = {
 
 export type Faq = {
   question: string,
-  answer: [Object],
+  answer: string,
 };
 
 export type Price = {

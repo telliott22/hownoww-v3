@@ -25,13 +25,16 @@ const Home: NextPage<{ bonds: Bond[], faqSections: FaqSection[] }> = function ({
   const [prices, setPrices] = useState<Price[]>();
 
   const fetchPricing = async () => {
-    const url = `${process.env.NEXT_PUBLIC_PRICING_API}/prices`;
+    try {
+      const url = `${process.env.NEXT_PUBLIC_PRICING_API}/prices`;
+      const response = await fetch(url);
 
-    const response = await fetch(url);
+      const json: Price[] = await response.json();
 
-    const json: Price[] = await response.json();
-
-    setPrices(json);
+      setPrices(json);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
