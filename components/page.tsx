@@ -18,8 +18,12 @@ const Page: NextPage<{ title?: string, description?: string }> = function ({ chi
       <Layout title={title} description={description} navigation={navigation}>
         {children}
       </Layout>
-      <ContactCta />
-      <Footer navigation={navigation} />
+
+      <div className="pt-28">
+        <ContactCta />
+        <Footer navigation={navigation} />
+      </div>
+
     </main>
   );
 };

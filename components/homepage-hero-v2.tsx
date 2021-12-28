@@ -1,11 +1,12 @@
 import { FunctionComponent } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import HeroImage from '../public/hero-2.jpg';
 
 const HomepageHero: FunctionComponent = function () {
   return (
 
-    <div className="relative bg-white overflow-hidden mb-20">
+    <div className="relative bg-white overflow-hidden mb-8 md:mb-0">
       <div className="max-w-7xl mx-auto h-full">
         <div className="relative z-10 pb-8 bg-white sm:pb-10 lg:max-w-2xl lg:w-full">
           <svg
@@ -36,20 +37,14 @@ const HomepageHero: FunctionComponent = function () {
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
-                  <a
-                    href="#"
-                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10"
+                  <Link
+                    href="/pricing"
+                    passHref
                   >
-                    Live pricing
-                  </a>
-                </div>
-                <div className="mt-3 sm:mt-0 sm:ml-3">
-                  <a
-                    href="#"
-                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200 md:py-4 md:text-lg md:px-10"
-                  >
-                    Tell me more
-                  </a>
+                    <a className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10">
+                      Live pricing
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>

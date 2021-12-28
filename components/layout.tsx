@@ -3,6 +3,7 @@ import { Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { FunctionComponent } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import Logo from './logo';
 import FooterTicker from './ticker';
 import { NavItem } from '../sanity/types';
@@ -29,19 +30,23 @@ const Layout: FunctionComponent<{ title?:string, description?: string, navigatio
                   </div>
                   <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
                     {navigation.map((item) => (
-                      <a
+
+                      <Link
                         key={item.name}
                         href={item.href}
-                        className={classNames(
+                        passHref
+                        aria-current={loacation.pathname === item.href ? 'page' : undefined}
+                      >
+                        <a className={classNames(
                           loacation.pathname === item.href
                             ? 'border-blue-600 text-blue-600'
                             : 'border-transparent text-gray-500 hover:border-opacity-30 hover:border-blue-600 hover:text-blue-600',
                           'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium',
                         )}
-                        aria-current={loacation.pathname === item.href ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </a>
+                        >
+                          {item.name}
+                        </a>
+                      </Link>
                     ))}
                   </div>
                 </div>

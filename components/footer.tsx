@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react';
+import Link from 'next/link';
 import { NavItem } from '../sanity/types';
 import Container from './container';
 import Logo from './logo';
@@ -12,25 +13,28 @@ const Footer: FunctionComponent<{ navigation: NavItem[] }> = function ({ navigat
         Footer
       </h2>
       <Container>
-        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="grid grid-cols-2 gap-8 xl:col-span-2">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <ul className="mt-4 space-y-4 -">
-                  <li className="mb-8">
-                    <Logo color="white" desktopOnly />
-                  </li>
-                  {navigation.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-base text-gray-300 hover:text-white">
+        <div>
+          <ul className="mt-4 space-y-4 flex flex-col md:flex-row w-full justify-between">
+            <li className="mb-8">
+              <Logo color="white" desktopOnly />
+            </li>
+            <li>
+
+              <ul className="flex flex-col md:flex-row md:space-x-4 md:relative md:top-[10px] space-y-4 md:space-y-0">
+                {navigation.map((item) => (
+                  <li key={item.name}>
+                    <Link href={item.href} passHref>
+                      <a className="text-base text-gray-300 hover:text-white">
                         {item.name}
                       </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
+                    </Link>
+                  </li>
+                ))}
+
+              </ul>
+            </li>
+
+          </ul>
           {/* <div className="mt-8 xl:mt-0">
             <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
               Subscribe to our newsletter
