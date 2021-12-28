@@ -1,12 +1,11 @@
-import type { NextPage } from 'next'
-import Container from '../components/container'
-import CouponScheduleComponent from '../components/coupon-schedule-component'
-import Page from '../components/page'
+import type { NextPage } from 'next';
+import Container from '../components/container';
+import CouponScheduleComponent from '../components/coupon-schedule-component';
+import Page from '../components/page';
 
-const CouponSchedules: NextPage = () => {
-
+const CouponSchedules: NextPage = function () {
   return (
-    <Page title={'Coupon Schedules'} description={'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}>
+    <Page title="Coupon Schedules" description="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
 
       <Container>
 
@@ -15,7 +14,7 @@ const CouponSchedules: NextPage = () => {
       </Container>
 
     </Page>
-  )
-}
+  );
+};
 
-export default CouponSchedules
+export default CouponSchedules;
