@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Head from 'next/head';
 import Layout from './layout';
 import Footer from './footer';
 import { NavItem } from '../sanity/types';
@@ -14,7 +15,19 @@ const Page: NextPage<{ title?: string, description?: string }> = function ({ chi
   ];
 
   return (
+
     <main className="mt-6">
+
+      <Head>
+
+        <title>
+          {' '}
+          {title ? `${title} | ` : ''}
+          {' '}
+          HowNoww.com
+          {' '}
+        </title>
+      </Head>
       <Layout title={title} description={description} navigation={navigation}>
         {children}
       </Layout>
