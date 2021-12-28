@@ -27,6 +27,12 @@ const Page: NextPage<{ title?: string, description?: string }> = function ({ chi
           HowNoww.com
           {' '}
         </title>
+
+        <meta
+          name="description"
+          content={description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
+        />
+
       </Head>
       <Layout title={title} description={description} navigation={navigation}>
         {children}
