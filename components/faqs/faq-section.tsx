@@ -1,7 +1,6 @@
 import { FunctionComponent } from 'react';
 import { Disclosure } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/outline';
-import Container from '../container';
 import { classNames } from '../../lib/utils';
 import { Faq, FaqSection } from '../../sanity/types';
 import RichText from '../rich-text';

@@ -1,5 +1,6 @@
 import { ChevronRightIcon, ViewListIcon } from '@heroicons/react/solid';
 import { FunctionComponent } from 'react';
+import Link from 'next/link';
 import { GuidePageNavItem } from '../sanity/types';
 
 const GuideBreadcrumbs: FunctionComponent<{ currentPage ?: GuidePageNavItem, setOpen: Function }> = function ({ currentPage, setOpen }) {
@@ -21,12 +22,17 @@ const GuideBreadcrumbs: FunctionComponent<{ currentPage ?: GuidePageNavItem, set
         <li>
           <div className="flex items-center">
             <ChevronRightIcon className="flex-shrink-0 h-5 w-5 text-gray-400" aria-hidden="true" />
-            <a
+
+            <Link
+              passHref
               href="/guide"
-              className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
+
             >
-              Guide
-            </a>
+              <a className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">
+                Guide
+
+              </a>
+            </Link>
           </div>
         </li>
 

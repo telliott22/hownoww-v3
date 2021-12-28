@@ -4,22 +4,20 @@ import Container from '../components/container';
 import Page from '../components/page';
 import BondTable from '../components/bond-table';
 import { Price, Bond, FaqSection } from '../sanity/types';
-import { getAllBonds, getAllFaqSections } from '../sanity/queries';
+import { getAllBonds } from '../sanity/queries';
 
 export async function getStaticProps() {
   const bonds = await getAllBonds();
-  const faqSections = await getAllFaqSections();
 
   return {
     props: {
       bonds,
-      faqSections,
     },
     revalidate: 60 * 60 * 6, // 6 hours
   };
 }
 
-const Pricing: NextPage<{ bonds: Bond[], faqSections: FaqSection[] }> = function ({ bonds, faqSections }) {
+const Pricing: NextPage<{ bonds: Bond[], faqSections: FaqSection[] }> = function ({ bonds }) {
   const [prices, setPrices] = useState<Price[]>();
 
   const fetchPricing = async () => {

@@ -4,7 +4,7 @@ import { getAllBonds } from '../../sanity/queries';
 import HistoryPage from '../../components/history-page';
 import { Price } from '../../sanity/types';
 
-const renderPage: FunctionComponent<{ prices: Price[], title: sting }> = ({
+const renderPage: FunctionComponent<{ prices: Price[], title: string }> = ({
   prices,
   title,
 }) => <HistoryPage prices={prices} title={title} />;

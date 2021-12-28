@@ -8,7 +8,7 @@ const ContactCta: FunctionComponent = function () {
         <div className="py-12 lg:py-24 lg:flex lg:items-center lg:justify-between">
           <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl space-y-2">
             <span className="block">Thoughts, comments, suggestions?</span>
-            <span className="block text-blue-200">We'd love to hear from you.</span>
+            <span className="block text-blue-200">We&#39;d love to hear from you.</span>
           </h2>
           <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
             <div className="inline-flex rounded-md shadow">

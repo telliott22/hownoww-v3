@@ -28,4 +28,9 @@ const Page: NextPage<{ title?: string, description?: string }> = function ({ chi
   );
 };
 
+Page.defaultProps = {
+  title: '',
+  description: '',
+};
+
 export default Page;

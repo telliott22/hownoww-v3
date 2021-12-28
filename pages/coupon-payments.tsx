@@ -37,10 +37,10 @@ const CouponPayments: NextPage<{ months: Month[] }> = function ({ months }) {
 
           {
                         months
-                        && months.map((month, index) => {
+                        && months.map((month) => {
                           const splitTitle = month.date.split('/');
 
-                          const title = `${monthsLabels[parseInt(splitTitle[0]) - 1]} ${splitTitle[1]}`;
+                          const title = `${monthsLabels[parseInt(splitTitle[0], 10) - 1]} ${splitTitle[1]}`;
 
                           return <BondTable type="coupon" prices={[]} key={title} bonds={month.coupons} title={title} />;
                         })

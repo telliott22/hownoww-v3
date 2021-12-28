@@ -109,20 +109,20 @@ const CashCalculatorComponent: FunctionComponent = function () {
                   <option> </option>
                   {
 
-                                        bondGroups
-                                        && bondGroups.map((bondGroup) => (
-                                          <optgroup key={bondGroup.issuerType} label={bondGroup.issuerType.toUpperCase()}>
+                    bondGroups
+                    && bondGroups.map((bondGroup) => (
+                      <optgroup key={bondGroup.issuerType} label={bondGroup.issuerType.toUpperCase()}>
 
-                                            {
-                                                        bondGroup.bonds
-                                                        && bondGroup.bonds.map((bond) => <option key={bond._id} value={bond.slug}>{bond.title}</option>)
+                        {
+                            bondGroup.bonds
+                            && bondGroup.bonds.map((bond) => <option key={bond.slug} value={bond.slug}>{bond.title}</option>)
 
-                                                    }
+                        }
 
-                                          </optgroup>
-                                        ))
+                      </optgroup>
+                    ))
 
-                                    }
+                  }
                 </select>
               </div>
 

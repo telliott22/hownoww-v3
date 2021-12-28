@@ -12,15 +12,6 @@ const CouponScheduleComputer: FunctionComponent = function () {
   const [selectedBond, setSelectedBond] = useState<Bond>();
   const [amount, setAmount] = useState(1000);
 
-  useEffect(() => {
-    fetchBondTitles();
-  }, []);
-
-  useEffect(() => {
-    setSelectedBond(bonds?.find((bond) => bond.slug === selectedBondSlug));
-    fetchCouponSchedule();
-  }, [selectedBondSlug, amount]);
-
   const fetchCouponSchedule = async () => {
     if (bonds && selectedBondSlug) {
       try {
@@ -36,29 +27,29 @@ const CouponScheduleComputer: FunctionComponent = function () {
   };
 
   const fetchBondTitles = async () => {
-    const bonds = await getAllBonds();
+    const allBonds = await getAllBonds();
 
-    setBonds(bonds);
+    setBonds(allBonds);
 
-    const bondGroups: BondGroup[] = [];
+    const tempBondGroups: BondGroup[] = [];
 
     // Convert bonds to bond groups for optiongroups in select
-    bonds.forEach((bond: Bond) => {
+    allBonds.forEach((bond: Bond) => {
       const { issuerType } = bond;
 
-      const bondGroupIndex = bondGroups.findIndex((bondGroup) => bondGroup.issuerType === issuerType);
+      const bondGroupIndex = tempBondGroups.findIndex((bondGroup) => bondGroup.issuerType === issuerType);
 
-      if (bondGroups && bondGroupIndex > -1 && bondGroups[bondGroupIndex]) {
-        bondGroups[bondGroupIndex].bonds.push(bond);
+      if (tempBondGroups && bondGroupIndex > -1 && tempBondGroups[bondGroupIndex]) {
+        tempBondGroups[bondGroupIndex].bonds.push(bond);
       } else {
-        bondGroups.push({
+        tempBondGroups.push({
           issuerType,
           bonds: [bond],
         });
       }
     });
 
-    setBondGroups(bondGroups);
+    setBondGroups(tempBondGroups);
   };
 
   const downloadCouponSchedule = () => {
@@ -78,6 +69,15 @@ const CouponScheduleComputer: FunctionComponent = function () {
       anchor.click();
     }
   };
+
+  useEffect(() => {
+    fetchBondTitles();
+  }, []);
+
+  useEffect(() => {
+    setSelectedBond(bonds?.find((bond) => bond.slug === selectedBondSlug));
+    fetchCouponSchedule();
+  }, [selectedBondSlug, amount]);
 
   return (
     <div className="mt-12">
@@ -99,20 +99,20 @@ const CouponScheduleComputer: FunctionComponent = function () {
                 <option />
                 {
 
-                                    bondGroups
-                                    && bondGroups.map((bondGroup) => (
-                                      <optgroup key={bondGroup.issuerType} label={bondGroup.issuerType.toUpperCase()}>
+                    bondGroups
+                    && bondGroups.map((bondGroup) => (
+                      <optgroup key={bondGroup.issuerType} label={bondGroup.issuerType.toUpperCase()}>
 
-                                        {
-                                                    bondGroup.bonds
-                                                    && bondGroup.bonds.map((bond) => <option key={bond._id} value={bond.slug}>{bond.title}</option>)
+                        {
+                            bondGroup.bonds
+                            && bondGroup.bonds.map((bond) => <option key={bond.slug} value={bond.slug}>{bond.title}</option>)
 
-                                                }
+                        }
 
-                                      </optgroup>
-                                    ))
+                      </optgroup>
+                    ))
 
-                                }
+                }
               </select>
             </div>
 
@@ -129,7 +129,7 @@ const CouponScheduleComputer: FunctionComponent = function () {
                   name="amount"
                   id="amount"
                   value={amount}
-                  onChange={(e) => setAmount(parseInt(e.target.value))}
+                  onChange={(e) => setAmount(parseInt(e.target.value, 10))}
                   className="border-opacity-50 border focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md p-3"
                   placeholder="1000"
                 />
@@ -153,29 +153,29 @@ const CouponScheduleComputer: FunctionComponent = function () {
               <thead>
                 <tr>
                   <th
-                      scope="col"
-                      className="px-6 pb-2 text-left text-sm font-bold text-blue-500 uppercase tracking-wider w-1/4"
-                    >
-                                  Coupon Rate
-                    </th>
+                    scope="col"
+                    className="px-6 pb-2 text-left text-sm font-bold text-blue-500 uppercase tracking-wider w-1/4"
+                  >
+                    Coupon Rate
+                  </th>
                   <th
-                      scope="col"
-                      className="px-6 pb-2 text-left text-sm font-bold text-blue-500 uppercase tracking-wider w-1/4"
-                    >
-                                  Coupon Frequency
-                    </th>
+                    scope="col"
+                    className="px-6 pb-2 text-left text-sm font-bold text-blue-500 uppercase tracking-wider w-1/4"
+                  >
+                    Coupon Frequency
+                  </th>
                   <th
-                      scope="col"
-                      className="px-6 pb-2 text-left text-sm font-bold text-blue-500 uppercase tracking-wider w-1/4"
-                    >
-                                  Maturity
-                    </th>
+                    scope="col"
+                    className="px-6 pb-2 text-left text-sm font-bold text-blue-500 uppercase tracking-wider w-1/4"
+                  >
+                    Maturity
+                  </th>
                   <th
-                      scope="col"
-                      className="px-6 pb-2 text-left text-sm font-bold text-blue-500 uppercase tracking-wider w-1/4"
-                    >
-                                  Coupons Remaining
-                    </th>
+                    scope="col"
+                    className="px-6 pb-2 text-left text-sm font-bold text-blue-500 uppercase tracking-wider w-1/4"
+                  >
+                    Coupons Remaining
+                  </th>
                 </tr>
               </thead>
               <tbody>

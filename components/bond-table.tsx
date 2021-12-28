@@ -116,7 +116,7 @@ const BondTable: FunctionComponent<{ title: string, bonds: Bond[], prices?: Pric
       );
     }
 
-    if (type === 'history') {
+    if (type === 'history' && prices) {
       return (
         <tbody>
           {prices.map((price, index) => (

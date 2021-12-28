@@ -29,6 +29,9 @@
       "operator-assignment": "off",
       "react/react-in-jsx-scope": "off",
       "jsx-a11y/anchor-is-valid": "off",
+      "jsx-a11y/label-has-associated-control": "off",
+      "jsx-a11y/control-has-associated-label": "off",
+      "react/prop-types": "off",
       "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
       "react/jsx-props-no-spreading": [1, {
         "exceptions": ["Component"]

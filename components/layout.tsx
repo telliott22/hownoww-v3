@@ -123,4 +123,9 @@ const Layout: FunctionComponent<{ title?:string, description?: string, navigatio
   );
 };
 
+Layout.defaultProps = {
+  title: '',
+  description: '',
+};
+
 export default Layout;
