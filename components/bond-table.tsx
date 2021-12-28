@@ -8,6 +8,7 @@ import { Bond, Price } from '../sanity/types';
 import NigerianFlag from '../public/flags/nigeria.png';
 import AngolanFlag from '../public/flags/angola.png';
 import GhanaianFlag from '../public/flags/ghana.png';
+import { formatDate } from '../lib/utils';
 
 const BondTable: FunctionComponent<{ title: string, bonds: Bond[], prices?: Price[], type: 'coupon' | 'bond' | 'history' }> = function ({
   title, bonds, prices, type,
@@ -58,7 +59,7 @@ const BondTable: FunctionComponent<{ title: string, bonds: Bond[], prices?: Pric
                   {bond.issuer}
 
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{bond.maturityDate}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{formatDate(bond.maturityDate)}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{bond.coupon}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{pricing ? pricing.bid_price : ''}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
@@ -107,7 +108,7 @@ const BondTable: FunctionComponent<{ title: string, bonds: Bond[], prices?: Pric
             <tr key={bond.title} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{bond.couponDate}</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{bond.issuer}</td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{bond.maturityDate}</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{formatDate(bond.maturityDate)}</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{bond.coupon}</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{bond.coupon}</td>
             </tr>
