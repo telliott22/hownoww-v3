@@ -80,7 +80,7 @@ const CouponScheduleComputer: FunctionComponent = function () {
   }, [selectedBondSlug, amount]);
 
   return (
-    <div className="mt-12">
+    <div className="">
       <div className="md:grid md:grid-cols-3 md:gap-10">
         <div className="md:col-span-1 space-y-6">
 

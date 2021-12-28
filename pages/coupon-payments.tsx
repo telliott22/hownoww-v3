@@ -33,18 +33,18 @@ const CouponPayments: NextPage<{ months: Month[] }> = function ({ months }) {
 
       <Container>
 
-        <div className="space-y-10 mt-10 md:space-y-20 md:mt-20">
+        <div className="space-y-10 md:space-y-20">
 
           {
-                        months
-                        && months.map((month) => {
-                          const splitTitle = month.date.split('/');
+                months
+                && months.map((month) => {
+                  const splitTitle = month.date.split('/');
 
-                          const title = `${monthsLabels[parseInt(splitTitle[0], 10) - 1]} ${splitTitle[1]}`;
+                  const title = `${monthsLabels[parseInt(splitTitle[0], 10) - 1]} ${splitTitle[1]}`;
 
-                          return <BondTable type="coupon" prices={[]} key={title} bonds={month.coupons} title={title} />;
-                        })
-                    }
+                  return <BondTable type="coupon" prices={[]} key={title} bonds={month.coupons} title={title} />;
+                })
+            }
 
         </div>
 
