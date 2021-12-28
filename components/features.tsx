@@ -1,7 +1,5 @@
-/* This example requires Tailwind CSS v2.0+ */
 import { FunctionComponent } from 'react';
 
-/* This example requires Tailwind CSS v2.0+ */
 import {
   AnnotationIcon, GlobeAltIcon, LightningBoltIcon, ScaleIcon,
 } from '@heroicons/react/outline';

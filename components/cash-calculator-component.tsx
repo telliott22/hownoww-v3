@@ -88,13 +88,13 @@ const CashCalculatorComponent: FunctionComponent = function () {
   }, [price, amount, settlementDate, previousCoupon, selectedBond]);
 
   return (
-    <div className="mt-20">
+    <div className="">
       <form className="space-y-8 divide-y divide-gray-200">
         <div className="space-y-8 divide-y divide-gray-200 sm:space-y-5">
           <div>
             <div className="mt-6 sm:mt-5 space-y-6 sm:space-y-5">
               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                <label htmlFor="bond" className="block text-lg font-medium text-gray-700">
+                <label htmlFor="bond" className="block text-sm font-medium text-gray-700">
                   Select Bond
                 </label>
                 <select
@@ -125,7 +125,7 @@ const CashCalculatorComponent: FunctionComponent = function () {
               </div>
 
               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                <label className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                <label className="block text-sm font-medium text-gray-700 sm:mt-px ">
                   Trade Date
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
@@ -138,7 +138,7 @@ const CashCalculatorComponent: FunctionComponent = function () {
                 </div>
               </div>
               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start">
-                <label className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                <label className="block text-sm font-medium text-gray-700 sm:mt-px ">
                   Settlement Date
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
@@ -153,7 +153,7 @@ const CashCalculatorComponent: FunctionComponent = function () {
             </div>
             <div className="mt-6 sm:mt-5 space-y-6 sm:space-y-5">
               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                <label htmlFor="price" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                <label htmlFor="price" className="block text-sm font-medium text-gray-700 sm:mt-px ">
                   Indicated Price
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
@@ -169,7 +169,7 @@ const CashCalculatorComponent: FunctionComponent = function () {
                 </div>
               </div>
               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start">
-                <label className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                <label className="block text-sm font-medium text-gray-700 sm:mt-px ">
                   Nominal Amount
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
@@ -188,24 +188,24 @@ const CashCalculatorComponent: FunctionComponent = function () {
 
             <div className="mt-6 sm:mt-5 space-y-6 sm:space-y-5">
               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                <label className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                <label className="block text-sm font-medium text-gray-700 sm:mt-px ">
                   Previous Coupon
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <p
-                    className="block w-52 sm:text-sm border-gray-300 rounded-md p-3"
+                    className="block w-52 sm:text-sm border-gray-300 rounded-md"
                   >
                     { previousCoupon }
                   </p>
                 </div>
               </div>
               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start">
-                <label className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                <label className="block text-sm font-medium text-gray-700 sm:mt-px ">
                   Next Coupon
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <p
-                    className="block w-52 sm:text-sm border-gray-300 rounded-md p-3"
+                    className="block w-52 sm:text-sm border-gray-300 rounded-md"
                   >
                     { nextCoupon }
                   </p>
@@ -215,48 +215,48 @@ const CashCalculatorComponent: FunctionComponent = function () {
 
             <div className="mt-6 sm:mt-5 space-y-6 sm:space-y-5">
               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                <label className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                <label className="block text-sm font-medium text-gray-700 sm:mt-px ">
                   Coupon rate
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <p
-                    className="block w-52 sm:text-sm border-gray-300 rounded-md p-3"
+                    className="block w-52 sm:text-sm border-gray-300 rounded-md "
                   >
                     { selectedBond?.coupon }
                   </p>
                 </div>
               </div>
               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start">
-                <label className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                <label className="block text-sm font-medium text-gray-700 sm:mt-px ">
                   Coupon Frequency
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <p
-                    className="block w-52 sm:text-sm border-gray-300 rounded-md p-3"
+                    className="block w-52 sm:text-sm border-gray-300 rounded-md"
                   >
                     Semi-Anually
                   </p>
                 </div>
               </div>
               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start">
-                <label className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                <label className="block text-sm font-medium text-gray-700 sm:mt-px ">
                   Day Count Convention
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <p
-                    className="block w-52 sm:text-sm border-gray-300 rounded-md p-3"
+                    className="block w-52 sm:text-sm border-gray-300 rounded-md"
                   >
                     30/360
                   </p>
                 </div>
               </div>
               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start">
-                <label className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                <label className="block text-sm font-medium text-gray-700 sm:mt-px ">
                   Accrual Days
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <p
-                    className="block w-52 sm:text-sm border-gray-300 rounded-md p-3"
+                    className="block w-52 sm:text-sm border-gray-300 rounded-md "
                   >
                     { accrualDays }
                   </p>
@@ -265,36 +265,36 @@ const CashCalculatorComponent: FunctionComponent = function () {
             </div>
             <div className="mt-6 sm:mt-5 space-y-6 sm:space-y-5">
               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                <label className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                <label className="block text-sm font-medium text-gray-700 sm:mt-px ">
                   Principal Amount
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <p
-                    className="block w-52 sm:text-sm border-gray-300 rounded-md p-3"
+                    className="block w-52 sm:text-sm border-gray-300 rounded-md "
                   >
                     { amount }
                   </p>
                 </div>
               </div>
               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start">
-                <label className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                <label className="block text-sm font-medium text-gray-700 sm:mt-px ">
                   Accrued Interest
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <p
-                    className="block w-52 sm:text-sm border-gray-300 rounded-md p-3"
+                    className="block w-52 sm:text-sm border-gray-300 rounded-md "
                   >
                     { interest }
                   </p>
                 </div>
               </div>
               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start">
-                <label className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                <label className="block text-sm font-medium text-gray-700 sm:mt-px ">
                   Total Cash Consideration
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <p
-                    className="block w-52 sm:text-sm border-gray-300 rounded-md p-3"
+                    className="block w-52 sm:text-sm border-gray-300 rounded-md"
                   >
                     { total }
                   </p>
