@@ -9,7 +9,6 @@ import FaqSections from '../components/faqs/faq-section';
 import Features from '../components/features';
 import Features2 from '../components/features-2';
 import Flags from './flags';
-import BondTable from '../components/bond-table';
 
 export async function getStaticProps() {
   const bonds = await getAllBonds();

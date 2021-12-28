@@ -9,7 +9,7 @@ import NigerianFlag from '../public/flags/nigeria.png';
 import AngolanFlag from '../public/flags/angola.png';
 import GhanaianFlag from '../public/flags/ghana.png';
 
-const BondTable: FunctionComponent<{ title: string, bonds: Bond[], prices: Price[], type: 'coupon' | 'bond' | 'history' }> = function ({
+const BondTable: FunctionComponent<{ title: string, bonds: Bond[], prices?: Price[], type: 'coupon' | 'bond' | 'history' }> = function ({
   title, bonds, prices, type,
 }) {
   const changeChevron = (change: string) => {
@@ -324,6 +324,10 @@ const BondTable: FunctionComponent<{ title: string, bonds: Bond[], prices: Price
 
     </div>
   );
+};
+
+BondTable.defaultProps = {
+  prices: [],
 };
 
 export default BondTable;

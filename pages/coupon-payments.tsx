@@ -1,61 +1,57 @@
-import type { NextPage } from 'next'
-import Page from '../components/page'
-import {Bond} from '../sanity/types'
+import type { NextPage } from 'next';
+import Page from '../components/page';
+import { Bond } from '../sanity/types';
 import BondTable from '../components/bond-table';
 import Container from '../components/container';
 
 export async function getStaticProps() {
+  const url = `${process.env.NEXT_PUBLIC_PRICING_API}/coupons-this-year`;
 
-    const url = `${process.env.NEXT_PUBLIC_PRICING_API}/coupons-this-year`;
+  const response = await fetch(url);
 
-    const response = await fetch(url)
+  const months = await response.json();
 
-    const months = await response.json()
-
-    return {
-      props: {
-        months,
-      },      
-      revalidate: 60 * 60 * 6, // 6 hours
-    }
-  }
-
-
-type Month = {
-    date: string,
-    coupons: Bond[]
+  return {
+    props: {
+      months,
+    },
+    revalidate: 60 * 60 * 6, // 6 hours
+  };
 }
 
-const CouponPayments: NextPage<{months: Month[]}> = ({months}) => {
-      
-    const monthsLabels = [ "January", "February", "March", "April", "May", "June", 
-    "July", "August", "September", "October", "November", "December" ];
+type Month = {
+  date: string,
+  coupons: Bond[]
+};
 
-    return (
-        <Page title={'Coupon Payments'} description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'}>
+const CouponPayments: NextPage<{ months: Month[] }> = function ({ months }) {
+  const monthsLabels = ['January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'];
 
-            <Container >
+  return (
+    <Page title="Coupon Payments" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.">
 
-                <div className="space-y-10 mt-10 md:space-y-20 md:mt-20">
+      <Container>
 
-                    {
-                        months &&
-                        months.map((month, index) => {
+        <div className="space-y-10 mt-10 md:space-y-20 md:mt-20">
 
-                            const splitTitle =  month.date.split('/');
+          {
+                        months
+                        && months.map((month, index) => {
+                          const splitTitle = month.date.split('/');
 
-                            const title = monthsLabels[parseInt(splitTitle[0]) - 1] + ' ' + splitTitle[1]
+                          const title = `${monthsLabels[parseInt(splitTitle[0]) - 1]} ${splitTitle[1]}`;
 
-                            return <BondTable type="coupon" key={index} bonds={month.coupons} title={title} />
+                          return <BondTable type="coupon" prices={[]} key={title} bonds={month.coupons} title={title} />;
                         })
                     }
 
-                </div>
+        </div>
 
-            </Container>
+      </Container>
 
-        </Page>
-    )
-}
+    </Page>
+  );
+};
 
-export default CouponPayments
+export default CouponPayments;
