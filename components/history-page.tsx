@@ -36,7 +36,7 @@ const HistoryPage: FunctionComponent<{ prices: Price[], title: string }> = funct
           Download
         </button>
 
-        <BondTable type="history" prices={prices || []} />
+        <BondTable bonds={[]} title="" type="history" prices={prices || []} />
 
       </Container>
 

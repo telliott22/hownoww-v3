@@ -11,6 +11,7 @@ const CashCalculatorComponent: FunctionComponent = function () {
   const [selectedBondSlug, setSelectedBondSlug] = useState<string>();
   const [nextCoupon, setNextCoupon] = useState<string>();
   const [previousCoupon, setPreviousCoupon] = useState<string>();
+  const [previousBeforeFirst, setPreviousBeforeFirst] = useState<boolean>();
   const [price, setPrice] = useState<number>();
   const [amount, setAmount] = useState<number>();
   const [accrualDays, setAccrualDays] = useState<number>();
@@ -30,6 +31,7 @@ const CashCalculatorComponent: FunctionComponent = function () {
 
       setNextCoupon(coupons.next);
       setPreviousCoupon(coupons.previous);
+      setPreviousBeforeFirst(coupons.previousBeforeFirst);
     }
   };
 
@@ -195,7 +197,7 @@ const CashCalculatorComponent: FunctionComponent = function () {
                   <p
                     className="block w-52 sm:text-sm border-gray-300 rounded-md"
                   >
-                    { previousCoupon }
+                    { previousBeforeFirst ? 'N/A' : previousCoupon }
                   </p>
                 </div>
               </div>

@@ -6,8 +6,8 @@ import LogoWhiteSvg from '../assets/images/logo-white.svg';
 import LogoMobileSvg from '../assets/images/logo-mobile.svg';
 
 interface LogoProps {
-  color: 'blue' | 'white'
-  desktopOnly: boolean
+  color?: 'blue' | 'white'
+  desktopOnly?: boolean
 }
 
 const defaultProps: LogoProps = {

@@ -1,5 +1,4 @@
 import { FunctionComponent } from 'react';
-import Ticker from './ticker';
 import Container from './container';
 
 const HomepageHero: FunctionComponent = function () {
