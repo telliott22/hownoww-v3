@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import Image from 'next/image';
-import Link from 'next/Link';
+import Link from 'next/link';
 import LogoSvg from '../assets/images/logo.svg';
 import LogoWhiteSvg from '../assets/images/logo-white.svg';
 import LogoMobileSvg from '../assets/images/logo-mobile.svg';
