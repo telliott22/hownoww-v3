@@ -24,7 +24,7 @@ const Page: NextPage<{ title?: string, description?: string }> = function ({ chi
           {' '}
           {title ? `${title} | ` : ''}
           {' '}
-          HowNoww.com
+          HowNoww
           {' '}
         </title>
 

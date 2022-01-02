@@ -81,7 +81,7 @@ const CouponScheduleComputer: FunctionComponent = function () {
 
   return (
     <div className="">
-      <div className="md:grid md:grid-cols-3 md:gap-10">
+      <div className="grid grid-cols-1  md:grid-cols-3 gap-10">
         <div className="md:col-span-1 space-y-6">
 
           <div>
@@ -146,11 +146,11 @@ const CouponScheduleComputer: FunctionComponent = function () {
           </button>
 
         </div>
-        <div className="mt-5 md:mt-0 md:col-span-2">
+        <div className="mt-5 md:mt-0 md:col-span-2 overflow-scroll">
 
           <div className="space-y-6">
-            <table className="w-full">
-              <thead>
+            <table className="">
+              <thead className="text-sm">
                 <tr>
                   <th
                     scope="col"

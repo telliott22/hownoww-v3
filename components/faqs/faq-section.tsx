@@ -9,7 +9,7 @@ import GuideCta from '../guide-cta';
 const FaqSections: FunctionComponent<{ faqSections: FaqSection[] }> = function ({ faqSections }) {
   return (
 
-    <div className="relative">
+    <div className="relative overflow-hidden">
 
       <div className="absolute inset-0 h-full">
 
