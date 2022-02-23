@@ -2,10 +2,12 @@ import { FunctionComponent, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/solid';
 import Link from 'next/link';
+
 import { GuidePageData, GuidePageNavItem } from '../sanity/types';
 import GuideSlideOver from './guide-slide-over';
 import GuideBreadcrumbs from './guide-breardcrumbs';
 import RichText from './rich-text';
+import GuideSearch from './guide-search';
 
 const GuideContent: FunctionComponent<{ pageData: GuidePageData, pageSlugs: GuidePageNavItem[] }> = function ({ pageData, pageSlugs }) {
   const router = useRouter();
@@ -23,17 +25,23 @@ const GuideContent: FunctionComponent<{ pageData: GuidePageData, pageSlugs: Guid
   }, [currentPageIndex]);
 
   return (
-    <div className="relative py-16 bg-white overflow-hidden">
+    <div className="relative py-8 lg:py-16 bg-white overflow-hidden">
 
       <GuideSlideOver open={open} setOpen={setOpen} pageSlugs={pageSlugs} />
 
-      <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
+      <div className=" absolute lg:inset-y-0 lg:h-full w-full">
 
-        <div className="max-w-4xl mx-auto">
+        <div className="lg:pt-12">
+
+          <GuideSearch />
+
+        </div>
+
+        <div className="max-w-4xl mx-auto hidden lg:block">
           <GuideBreadcrumbs setOpen={setOpen} currentPage={currentPage} />
         </div>
 
-        <div className="relative h-full text-lg max-w-prose mx-auto" aria-hidden="true">
+        <div className="relative h-full text-lg max-w-prose mx-auto hidden lg:block" aria-hidden="true">
 
           <svg
             className="absolute top-12 left-full transform translate-x-32"
@@ -100,7 +108,7 @@ const GuideContent: FunctionComponent<{ pageData: GuidePageData, pageSlugs: Guid
           </svg>
         </div>
       </div>
-      <div className="relative px-4 sm:px-6 lg:px-8">
+      <div className="relative px-4 sm:px-6 lg:px-8 top-12 lg:top-24">
         <div className="text-lg max-w-prose mx-auto mb-12 mt-10">
           <h1>
             <span className="block text-base text-center text-blue-600 font-semibold tracking-wide uppercase">
