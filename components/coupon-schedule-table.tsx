@@ -40,8 +40,8 @@ const CopuponScheduleTable: FunctionComponent<{ coupons: Coupon[] }> = function 
                 <tr key={coupon.date} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                   <td colSpan={1} className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{coupon.date}</td>
                   <td colSpan={1} className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{coupon.interest}</td>
-                  <td colSpan={1} className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{numberWithCommas(parseInt(coupon.principal, 10))}</td>
-                  <td colSpan={1} className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{numberWithCommas(parseInt(coupon.total, 10))}</td>
+                  <td colSpan={1} className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{numberWithCommas(parseFloat(coupon.principal, 10))}</td>
+                  <td colSpan={1} className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{numberWithCommas(parseFloat(coupon.total, 10))}</td>
                 </tr>
               ))
 

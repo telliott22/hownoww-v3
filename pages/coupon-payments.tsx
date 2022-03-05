@@ -36,7 +36,7 @@ const CouponPayments: NextPage<{ months: Month[] }> = function ({ months }) {
         <div className="space-y-10 md:space-y-20">
 
           {
-                months
+                months && months.length
                 && months.map((month) => {
                   const splitTitle = month.date.split('/');
 
