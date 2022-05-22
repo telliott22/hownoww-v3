@@ -22,16 +22,14 @@ const Features2: FunctionComponent = function () {
                   Coupon calender
                 </h2>
                 <p className="mt-4 text-lg text-gray-500">
-                  Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia
-                  porttitor. Pulvinar laoreet sagittis viverra duis. In venenatis sem arcu pretium pharetra at. Lectus
-                  viverra dui tellus ornare pharetra.
+                  To help you in planning your finances, our coupon calendar allows you to check when our Eurobonds pay a coupon in each calendar month.
                 </p>
                 <div className="mt-6">
                   <a
-                    href="#"
+                    href="/coupon-calendar"
                     className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
                   >
-                    Get started
+                    Go to Coupon Calendar
                   </a>
                 </div>
               </div>
@@ -62,16 +60,14 @@ const Features2: FunctionComponent = function () {
                   Coupon Schedules
                 </h2>
                 <p className="mt-4 text-lg text-gray-500">
-                  Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia
-                  porttitor. Pulvinar laoreet sagittis viverra duis. In venenatis sem arcu pretium pharetra at. Lectus
-                  viverra dui tellus ornare pharetra.
+                  Our coupon schedule section enables you to check when coupons are due for each Eurobond and observe it’s entire payment schedule.
                 </p>
                 <div className="mt-6">
                   <a
                     href="#"
                     className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
                   >
-                    Get started
+                    Go to Coupon Schedules
                   </a>
                 </div>
               </div>
@@ -102,16 +98,14 @@ const Features2: FunctionComponent = function () {
                   Coupon Calculator
                 </h2>
                 <p className="mt-4 text-lg text-gray-500">
-                  Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia
-                  porttitor. Pulvinar laoreet sagittis viverra duis. In venenatis sem arcu pretium pharetra at. Lectus
-                  viverra dui tellus ornare pharetra.
+                  A handy cash calculator will help you determine the exact cash amount for a potential Eurobond purchase or sale.
                 </p>
                 <div className="mt-6">
                   <a
                     href="#"
                     className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
                   >
-                    Get started
+                    Go to Cash Calculator
                   </a>
                 </div>
               </div>
@@ -142,16 +136,14 @@ const Features2: FunctionComponent = function () {
                   Guide
                 </h2>
                 <p className="mt-4 text-lg text-gray-500">
-                  Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia
-                  porttitor. Pulvinar laoreet sagittis viverra duis. In venenatis sem arcu pretium pharetra at. Lectus
-                  viverra dui tellus ornare pharetra.
+                  Our guide will tackle all of the financial jargon and other ins and outs you may need to be aware of when investing in Eurobonds
                 </p>
                 <div className="mt-6">
                   <a
                     href="#"
                     className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
                   >
-                    Get started
+                    Go to Guide
                   </a>
                 </div>
               </div>

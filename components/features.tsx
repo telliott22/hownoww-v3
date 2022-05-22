@@ -8,25 +8,25 @@ const features = [
   {
     name: 'Free',
     description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+        'We believe that the best way to open up Africa’s Eurobond market is by keeping things simple. All our Eurobond data is provided free of charge.',
     icon: GlobeAltIcon,
   },
   {
-    name: 'Reliable',
+    name: 'Inclusive',
     description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+        'We offer various tools to allow you to check Eurobond data beyond just pricing information.',
     icon: ScaleIcon,
   },
   {
     name: 'Up to date',
     description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+        ' All our Eurobond prices are updated up to 7 times a day to ensure reliability.',
     icon: LightningBoltIcon,
   },
   {
     name: 'Accurate',
     description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+        'Our algorithm-enhanced Eurobond pricing uses various data variables and is periodically cross-checked to provide you with high levels of accuracy.',
     icon: AnnotationIcon,
   },
 ];
@@ -38,10 +38,10 @@ const Features: FunctionComponent = function () {
         <div className="lg:text-center">
           <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Our mission</h2>
           <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            Everything you need to manage your Eurobond portfolio
+            Open up Africa’s Eurobond market for everybody
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-            We want to show the world how easy it is to trade African Eurobonds. Break down the wall blah blah. So our core values will always be
+            We want to tell everybody about African Eurobonds by getting more people involved with Africa’s capital market and make Eurobonds the simplest asset class.
           </p>
         </div>
 

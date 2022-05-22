@@ -4,7 +4,6 @@ import HomepageHero from '../components/homepage-hero-v2';
 import { getAllFaqSections } from '../sanity/queries';
 import { FaqSection } from '../sanity/types';
 import Container from '../components/container';
-import FaqSections from '../components/faqs/faq-section';
 import Features from '../components/features';
 import Features2 from '../components/features-2';
 import Flags from './flags';
@@ -20,7 +19,7 @@ export async function getStaticProps() {
   };
 }
 
-const Home: NextPage<{ faqSections: FaqSection[] }> = function ({ faqSections }) {
+const Home: NextPage<{ faqSections: FaqSection[] }> = function ({ }) {
   return (
     <Page>
 
@@ -34,7 +33,7 @@ const Home: NextPage<{ faqSections: FaqSection[] }> = function ({ faqSections })
 
           <Features2 />
 
-          <FaqSections faqSections={faqSections} />
+          {/* <FaqSections faqSections={faqSections} /> */}
 
           <Flags />
 

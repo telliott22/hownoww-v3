@@ -131,7 +131,7 @@ const GuideContent: FunctionComponent<{ pageData: GuidePageData, pageSlugs: Guid
                     <>
 
                       <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque obcaecati non provident aspernatur, pariatur laborum ex consequatur iure in. Nostrum aspernatur perspiciatis reprehenderit magni consectetur asperiores vel unde atque architecto.
+                        Eurobonds come with loads of financial jargon. Our guide tackles all jargon in a practical way and allows you manoeuvre across all section by searching for certain key words.
                       </p>
 
                       <ol>

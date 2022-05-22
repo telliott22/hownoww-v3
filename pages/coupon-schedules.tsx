@@ -5,7 +5,7 @@ import Page from '../components/page';
 
 const CouponSchedules: NextPage = function () {
   return (
-    <Page title="Coupon Schedules" description="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
+    <Page title="Coupon Schedules" description="Check per Eurobond the exact coupon payment and when it is expected to be paid during the entire life of the bond.">
 
       <Container>
 

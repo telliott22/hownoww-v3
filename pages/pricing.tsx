@@ -56,7 +56,10 @@ const Pricing: NextPage<{ bonds: Bond[], faqSections: FaqSection[] }> = function
   }, []);
 
   return (
-    <Page title="Pricing" description="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
+    <Page
+      title="Pricing"
+      description="Accurate and updated Eurobond pricing for all outstanding and expired Nigerian, Ghanaian and Angolan Eurobonds. Historical pricing and yield data and a publicly available prospectus are added to help you in your analysis."
+    >
 
       <Container>
 
