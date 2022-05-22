@@ -6,9 +6,6 @@ const ticker: FunctionComponent = () => {
 
   const fetchNotificatitonText = async () => {
     const result = await getNotification();
-
-    console.log('result', result);
-
     setNotificationText(result.text);
   };
 

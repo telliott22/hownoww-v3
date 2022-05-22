@@ -35,7 +35,7 @@ const Pricing: NextPage<{ bonds: Bond[], faqSections: FaqSection[] }> = function
 
       setPrices(json);
     } catch (error) {
-      console.log(error);
+      //
     }
   };
 

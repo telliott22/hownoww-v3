@@ -111,7 +111,7 @@ const CashCalculatorComponent: FunctionComponent = function () {
 
                     bondGroups
                     && bondGroups.map((bondGroup) => (
-                      <optgroup key={bondGroup.issuerType} label={bondGroup.issuerType.toUpperCase()}>
+                      <optgroup key={bondGroup?.issuerType} label={bondGroup?.issuerType?.toUpperCase()}>
 
                         {
                             bondGroup.bonds

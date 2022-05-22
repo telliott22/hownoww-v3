@@ -53,7 +53,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         },
       };
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
 
     // Pass page data to the page via props

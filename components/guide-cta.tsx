@@ -13,6 +13,7 @@ const ContactCta: FunctionComponent = function () {
         <div className="mt-8 flex justify-center">
           <div className="inline-flex rounded-md shadow">
             <Link
+              passHref
               href="/guide"
             >
               <span className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-700 hover:bg-blue-700">
