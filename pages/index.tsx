@@ -19,7 +19,7 @@ export async function getStaticProps() {
   };
 }
 
-const Home: NextPage<{ faqSections: FaqSection[] }> = function ({ }) {
+const Home: NextPage<{ faqSections: FaqSection[] }> = function () {
   return (
     <Page>
 

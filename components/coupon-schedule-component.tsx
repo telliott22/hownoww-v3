@@ -21,6 +21,7 @@ const CouponScheduleComputer: FunctionComponent = function () {
 
         setCouponSchedule(body);
       } catch (error) {
+        //
       }
     }
   };
