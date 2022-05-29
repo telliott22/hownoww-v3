@@ -38,9 +38,9 @@ const Features2: FunctionComponent = function () {
           <div className="mt-12 sm:mt-16 lg:mt-0">
             <div className="pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
               <img
-                className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                src="https://tailwindui.com/img/component-images/inbox-app-screenshot-1.jpg"
-                alt="Inbox user interface"
+                src="/coupon-calender.png"
+                className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-xl object-cover object-left"
+                alt="Coupon Calender"
               />
             </div>
           </div>
@@ -76,9 +76,9 @@ const Features2: FunctionComponent = function () {
           <div className="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
             <div className="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
               <img
-                className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
-                src="https://tailwindui.com/img/component-images/inbox-app-screenshot-2.jpg"
-                alt="Customer profile user interface"
+                src="/coupon-schedules.png"
+                className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-xl object-cover object-left"
+                alt="Coupon Schedules"
               />
             </div>
           </div>
@@ -95,7 +95,7 @@ const Features2: FunctionComponent = function () {
               </div>
               <div className="mt-6">
                 <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
-                  Coupon Calculator
+                  Cash Calculator
                 </h2>
                 <p className="mt-4 text-lg text-gray-500">
                   A handy cash calculator will help you determine the exact cash amount for a potential Eurobond purchase or sale.
@@ -114,9 +114,9 @@ const Features2: FunctionComponent = function () {
           <div className="mt-12 sm:mt-16 lg:mt-0">
             <div className="pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
               <img
-                className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                src="https://tailwindui.com/img/component-images/inbox-app-screenshot-1.jpg"
-                alt="Inbox user interface"
+                src="/cash-calculator.png"
+                className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-xl object-cover object-left"
+                alt="Cash calculator"
               />
             </div>
           </div>
@@ -152,9 +152,9 @@ const Features2: FunctionComponent = function () {
           <div className="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
             <div className="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
               <img
-                className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
-                src="https://tailwindui.com/img/component-images/inbox-app-screenshot-2.jpg"
-                alt="Customer profile user interface"
+                src="/guide.jpg"
+                className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-xl object-cover object-left"
+                alt="Guide"
               />
             </div>
           </div>

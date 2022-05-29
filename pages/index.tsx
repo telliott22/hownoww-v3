@@ -33,8 +33,6 @@ const Home: NextPage<{ faqSections: FaqSection[] }> = function () {
 
           <Features2 />
 
-          {/* <FaqSections faqSections={faqSections} /> */}
-
           <Flags />
 
         </div>

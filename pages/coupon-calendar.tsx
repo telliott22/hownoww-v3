@@ -29,7 +29,7 @@ const CouponPayments: NextPage<{ months: Month[] }> = function ({ months }) {
     'July', 'August', 'September', 'October', 'November', 'December'];
 
   return (
-    <Page title="Coupon Calculator" description="As part of your financial planning, please use our calendar to determine when coupons are due in your portfolio per calendar month.">
+    <Page title="Coupon Calender" description="As part of your financial planning, please use our calendar to determine when coupons are due in your portfolio per calendar month.">
 
       <Container>
 
