@@ -159,10 +159,9 @@ const GuideContent: FunctionComponent<{ pageData: GuidePageData, pageSlugs: Guid
 
         </div>
 
-        <div className="flex justify-between text-black max-w-4xl mx-auto mt-20 md:px-10">
+        <div className="flex justify-between text-black max-w-4xl mx-auto mt-20 md:px-10 mb-10">
 
           {
-
                 pageSlugs[currentPageIndex - 1]
                 && (
                 <div className="mr-auto">
@@ -180,7 +179,6 @@ const GuideContent: FunctionComponent<{ pageData: GuidePageData, pageSlugs: Guid
             }
 
           {
-
                 pageSlugs[currentPageIndex + 1]
                 && (
                 <div className="ml-auto">
