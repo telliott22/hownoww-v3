@@ -4,6 +4,7 @@ import {
   SparklesIcon,
 } from '@heroicons/react/outline';
 import { FunctionComponent } from 'react';
+import Link from 'next/link';
 
 const Features2: FunctionComponent = function () {
   return (
@@ -19,18 +20,23 @@ const Features2: FunctionComponent = function () {
               </div>
               <div className="mt-6">
                 <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
-                  Coupon calender
+                  Coupon calendar
                 </h2>
                 <p className="mt-4 text-lg text-gray-500">
                   To help you in planning your finances, our coupon calendar allows you to check when our Eurobonds pay a coupon in each calendar month.
                 </p>
                 <div className="mt-6">
-                  <a
+                  <Link
                     href="/coupon-calendar"
-                    className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
+                    passHref
                   >
-                    Go to Coupon Calendar
-                  </a>
+                    <a
+                      href="/coupon-calendar"
+                      className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
+                    >
+                      Go to Coupon Calendar
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -63,12 +69,17 @@ const Features2: FunctionComponent = function () {
                   Our coupon schedule section enables you to check when coupons are due for each Eurobond and observe it’s entire payment schedule.
                 </p>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
+                  <Link
+                    href="/coupon-schedules"
+                    passHref
                   >
-                    Go to Coupon Schedules
-                  </a>
+                    <a
+                      href="#"
+                      className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
+                    >
+                      Go to Coupon Schedules
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -101,12 +112,17 @@ const Features2: FunctionComponent = function () {
                   A handy cash calculator will help you determine the exact cash amount for a potential Eurobond purchase or sale.
                 </p>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
+                  <Link
+                    href="/cash-calculator"
+                    passHref
                   >
-                    Go to Cash Calculator
-                  </a>
+                    <a
+                      href="#"
+                      className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
+                    >
+                      Go to Cash Calculator
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -139,12 +155,16 @@ const Features2: FunctionComponent = function () {
                   Our guide will tackle all of the financial jargon and other ins and outs you may need to be aware of when investing in Eurobonds
                 </p>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
+                  <Link
+                    href="/guide"
+                    passHref
                   >
-                    Go to Guide
-                  </a>
+                    <a
+                      className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
+                    >
+                      Go to Guide
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>

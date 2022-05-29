@@ -13,7 +13,7 @@ import { classNames } from '../lib/utils';
 const Layout: FunctionComponent<{ title?:string, description?: string, navigation: NavItem[] }> = function ({
   children, title, description, navigation,
 }) {
-  const loacation = useRouter();
+  const location = useRouter();
 
   return (
     <div className="min-h-full">
@@ -36,10 +36,10 @@ const Layout: FunctionComponent<{ title?:string, description?: string, navigatio
                         key={item.name}
                         href={item.href}
                         passHref
-                        aria-current={loacation.pathname === item.href ? 'page' : undefined}
+                        aria-current={location.pathname === item.href ? 'page' : undefined}
                       >
                         <a className={classNames(
-                          loacation.pathname === item.href
+                          location.pathname === item.href
                             ? 'border-blue-600 text-blue-600'
                             : 'border-transparent text-gray-500 hover:border-opacity-30 hover:border-blue-600 hover:text-blue-600',
                           'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium',
@@ -73,13 +73,13 @@ const Layout: FunctionComponent<{ title?:string, description?: string, navigatio
                     as="a"
                     href={item.href}
                     className={classNames(
-                      loacation.pathname === item.href
+                      location.pathname === item.href
 
                         ? 'bg-blue-50 border-blue-default text-blue-default'
                         : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800',
                       'block pl-3 pr-4 py-2 border-l-4 text-base font-medium',
                     )}
-                    aria-current={loacation.pathname === item.href ? 'page' : undefined}
+                    aria-current={location.pathname === item.href ? 'page' : undefined}
                   >
                     {item.name}
                   </Disclosure.Button>
