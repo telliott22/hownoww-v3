@@ -1,7 +1,5 @@
 import { FunctionComponent } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
-import HeroImage from '../public/hero-2.jpg';
 
 const HomepageHero: FunctionComponent = function () {
   return (
