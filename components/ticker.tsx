@@ -1,12 +1,18 @@
-import { FunctionComponent, useEffect, useState } from 'react';
+import {
+  FunctionComponent, useEffect, useState, useRef,
+} from 'react';
 import { getNotification } from '../sanity/queries';
 
 const ticker: FunctionComponent = () => {
   const [notificationText, setNotificationText] = useState('');
+  const tickerRef = useRef();
 
   const fetchNotificatitonText = async () => {
     const result = await getNotification();
-    setNotificationText(result.text);
+
+    if (tickerRef.current) {
+      setNotificationText(result.text);
+    }
   };
 
   useEffect(() => {
@@ -14,62 +20,77 @@ const ticker: FunctionComponent = () => {
   }, []);
 
   return (
-    <div className="absolute top-0 flex overflow-x-hidden text-white text-sm uppercase border-b border-gray-200 space-x-8 w-full bg-gray-800">
-      <div className="py-[2px] animate-marquee whitespace-nowrap space-x-8">
+    // @ts-ignore
+    <div ref={tickerRef} className="absolute top-0 flex overflow-x-hidden text-white text-sm uppercase border-b border-gray-200 space-x-8 w-full bg-gray-800">
 
-        <span>
-          {notificationText}
-        </span>
+      {
+        notificationText
 
-        <span>
-          -
-        </span>
+          ? (
+            <>
 
-        <span>
-          {notificationText}
-        </span>
+              <div className="py-[2px] animate-marquee whitespace-nowrap space-x-8">
 
-        <span>
-          -
-        </span>
+                <span>
+                  {notificationText}
+                </span>
 
-        <span>
-          {notificationText}
-        </span>
+                <span>
+                  -
+                </span>
 
-        <span>
-          -
-        </span>
+                <span>
+                  {notificationText}
+                </span>
 
-      </div>
+                <span>
+                  -
+                </span>
 
-      <div className="absolute top-0 py-[2px] animate-marquee2 whitespace-nowrap space-x-8">
+                <span>
+                  {notificationText}
+                </span>
 
-        <span>
-          {notificationText}
-        </span>
+                <span>
+                  -
+                </span>
 
-        <span>
-          -
-        </span>
+              </div>
 
-        <span>
-          {notificationText}
-        </span>
+              <div className="absolute top-0 py-[2px] animate-marquee2 whitespace-nowrap space-x-8">
 
-        <span>
-          -
-        </span>
+                <span>
+                  {notificationText}
+                </span>
 
-        <span>
-          {notificationText}
-        </span>
+                <span>
+                  -
+                </span>
 
-        <span>
-          -
-        </span>
+                <span>
+                  {notificationText}
+                </span>
 
-      </div>
+                <span>
+                  -
+                </span>
+
+                <span>
+                  {notificationText}
+                </span>
+
+                <span>
+                  -
+                </span>
+
+              </div>
+
+            </>
+          )
+
+          : null
+      }
+
     </div>
   );
 };
