@@ -48,7 +48,7 @@ const Pricing: NextPage<{ bonds: Bond[], faqSections: FaqSection[] }> = function
 
     setAngolanBonds(bonds.filter((bond) => bond.issuerType === 'government' && bond.country === 'angola' && bond.expired !== true));
 
-    setNigerianBankBonds(bonds.filter((bond) => bond.issuerType === 'bank' && bond.country === 'nigeria' && bond.expired !== true));
+    setNigerianBankBonds(bonds.filter((bond) => bond.issuerType === 'bank' && bond.country === 'nigeria' && bond.expired !== true).sort((a, b) => a.title.localeCompare(b.title)));
 
     setNigerianCorporateBonds(bonds.filter((bond) => bond.issuerType === 'corporate' && bond.country === 'nigeria' && bond.expired !== true));
 

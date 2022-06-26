@@ -22,9 +22,6 @@ const HomepageHero: FunctionComponent = function () {
             <p className="mt-3 max-w-lg text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-4xl">
               Find out more about Nigerian, Ghanaian and Angolan Eurobonds through HowNoww.
             </p>
-            <p className="mt-3 max-w-lg text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-4xl">
-              Live pricing to see how Nigerian, Ghanaian and Angolan Eurobonds perform, an annual coupon schedule to observe when coupons are due and a helpful guide to help you understand Eurobonds even better.
-            </p>
           </div>
         </Container>
       </div>

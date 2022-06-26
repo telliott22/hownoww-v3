@@ -86,7 +86,7 @@ const CouponScheduleComputer: FunctionComponent = function () {
 
           <div>
             <div>
-              <label htmlFor="bond" className="block text-lg font-medium text-gray-700">
+              <label htmlFor="bond" className="block text-sm font-medium text-gray-700">
                 Select Bond
               </label>
               <select
@@ -120,7 +120,7 @@ const CouponScheduleComputer: FunctionComponent = function () {
 
           <div>
             <div>
-              <label htmlFor="amount" className="block text-lg font-medium text-gray-700">
+              <label htmlFor="amount" className="block text-sm font-medium text-gray-700">
                 Amount
               </label>
               <div className="mt-1">

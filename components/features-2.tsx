@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const Features2: FunctionComponent = function () {
   return (
-    <div className="relative bg-white pt-16 pb-32 overflow-hidden space-y-10 lg:space-y-20 ">
+    <div className="relative bg-white pt-16 pb-16 overflow-hidden space-y-10 lg:space-y-20 ">
       <div className="relative">
         <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
           <div className="px-4 max-w-xl mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">
@@ -20,7 +20,7 @@ const Features2: FunctionComponent = function () {
               </div>
               <div className="mt-6">
                 <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
-                  Coupon calendar
+                  Coupon Calendar
                 </h2>
                 <p className="mt-4 text-lg text-gray-500">
                   To help you in planning your finances, our coupon calendar allows you to check when our Eurobonds pay a coupon in each calendar month.
@@ -149,7 +149,7 @@ const Features2: FunctionComponent = function () {
               </div>
               <div className="mt-6">
                 <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
-                  Guide
+                  Eurobond Guide
                 </h2>
                 <p className="mt-4 text-lg text-gray-500">
                   Our guide will tackle all of the financial jargon and other ins and outs you may need to be aware of when investing in Eurobonds

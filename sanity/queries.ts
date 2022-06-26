@@ -4,7 +4,7 @@ type SanityQuery = string;
 type SanityQueryWithProps = Function;
 
 const getNotificationQuery: SanityQuery = '*[_type == "notification"][0]{...}';
-const getAllBondsQuery: SanityQuery = '*[_type == "bond"]{...,"slug": slug.current, "prospectus": prospectus.asset->url }';
+const getAllBondsQuery: SanityQuery = '*[_type == "bond"]{...,"slug": slug.current, "prospectus": prospectus.asset->url } | order(maturityDate asc)';
 const getAllBondsTitlesQuery: SanityQuery = '*[_type == "bond"]{title, _id, issuerType, "slug": slug.current}';
 const getAllFaqSectionsQuery: SanityQuery = '*[_type == "faqSection"] | order(order asc){...}';
 

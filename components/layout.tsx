@@ -42,7 +42,7 @@ const Layout: FunctionComponent<{ title?:string, description?: string, navigatio
                           location.pathname === item.href
                             ? 'border-blue-600 text-blue-600'
                             : 'border-transparent text-gray-500 hover:border-opacity-30 hover:border-blue-600 hover:text-blue-600',
-                          'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium',
+                          'inline-flex items-center px-1 pt-1 border-b-2 text-md font-medium',
                         )}
                         >
                           {item.name}
