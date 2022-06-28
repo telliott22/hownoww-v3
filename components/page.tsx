@@ -1,11 +1,14 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { GoogleAnalytics, usePageViews } from 'nextjs-google-analytics';
 import Layout from './layout';
 import Footer from './footer';
 import { NavItem } from '../sanity/types';
 import ContactCta from './contact-cta';
 
 const Page: NextPage<{ title?: string, description?: string }> = function ({ children, title, description }) {
+  usePageViews();
+
   const navigation: NavItem[] = [
     { name: 'Pricing', href: '/pricing' },
     { name: 'Coupon Calendar', href: '/coupon-calendar' },
@@ -17,6 +20,7 @@ const Page: NextPage<{ title?: string, description?: string }> = function ({ chi
   return (
 
     <main className="mt-6">
+      <GoogleAnalytics />
 
       <Head>
 
