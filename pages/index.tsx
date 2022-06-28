@@ -21,7 +21,11 @@ export async function getStaticProps() {
 
 const Home: NextPage<{ faqSections: FaqSection[] }> = function () {
   return (
-    <Page>
+    <Page
+      title="HowNoww"
+      description="Daily Nigerian, Ghanaian
+    and Angolan Eurobond Pricing"
+    >
 
       <HomepageHero />
 
