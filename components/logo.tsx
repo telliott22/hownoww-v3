@@ -1,50 +1,50 @@
-import { FunctionComponent } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import LogoSvg from "../assets/images/logo.svg";
-import LogoWhiteSvg from "../assets/images/logo-white.svg";
-import LogoMobileSvg from "../assets/images/logo-mobile.svg";
+import { FunctionComponent } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import LogoSvg from '../assets/images/logo.svg';
+import LogoWhiteSvg from '../assets/images/logo-white.svg';
+import LogoMobileSvg from '../assets/images/logo-mobile.svg';
 
 interface LogoProps {
-	color?: "blue" | "white";
-	desktopOnly?: boolean;
+  color?: 'blue' | 'white';
+  desktopOnly?: boolean;
 }
 
 const defaultProps: LogoProps = {
-	color: "blue",
-	desktopOnly: false
+  color: 'blue',
+  desktopOnly: false,
 };
 
 const Logo: FunctionComponent<LogoProps> = function ({ color, desktopOnly }) {
-	return (
-		<Link href="/" passHref>
-			<a>
-				<div
-					className={`h-12 w-12 p-1${
-						desktopOnly ? " hidden " : " block xl:hidden "
-					}`}
-				>
-					<Image
-						src={color === "white" ? LogoWhiteSvg : LogoMobileSvg}
-						alt="HowNoww"
-					/>
-				</div>
-				<div
-					className={`h-28 w-[260px] relative cursor-pointer ${
-						desktopOnly
-							? "block h-20 w-[220px] lg:h-28 lg:w-[260px] "
-							: "hidden xl:block"
-					}`}
-				>
-					<Image
-						src={color === "white" ? LogoWhiteSvg : LogoSvg}
-						alt="HowNoww"
-						layout="fill"
-					/>
-				</div>
-			</a>
-		</Link>
-	);
+  return (
+    <Link href="/" passHref>
+      <a>
+        <div
+          className={`h-12 w-12 p-1${
+            desktopOnly ? ' hidden ' : ' block xl:hidden '
+          }`}
+        >
+          <Image
+            src={color === 'white' ? LogoWhiteSvg : LogoMobileSvg}
+            alt="HowNoww"
+          />
+        </div>
+        <div
+          className={`h-28 w-[260px] relative cursor-pointer ${
+            desktopOnly
+              ? 'block h-20 w-[220px] lg:h-28 lg:w-[260px] '
+              : 'hidden xl:block'
+          }`}
+        >
+          <Image
+            src={color === 'white' ? LogoWhiteSvg : LogoSvg}
+            alt="HowNoww"
+            layout="fill"
+          />
+        </div>
+      </a>
+    </Link>
+  );
 };
 
 Logo.defaultProps = defaultProps;
